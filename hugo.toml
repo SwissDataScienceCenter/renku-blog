@@ -1,0 +1,4 @@
+baseURL = 'https://swissdatasciencecenter.github.io/renku-blog/'
+languageCode = 'en-us'
+title = 'Renku Blog'
+theme = 'ananke'
