@@ -48,7 +48,7 @@ const config = {
             'https://github.com/SwissDataScienceCenter/renku-blog/tree/main/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.scss'),
         },
       }),
     ],
@@ -79,6 +79,7 @@ const config = {
             position: 'right',
           },
         ],
+        style: 'dark',
       },
       footer: {
         style: 'dark',
@@ -129,7 +130,14 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+        respectPrefersColorScheme: false
+      }
     }),
+
+    plugins: ['docusaurus-plugin-sass'],
 };
 
 module.exports = config;
