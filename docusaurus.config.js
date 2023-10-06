@@ -1,54 +1,56 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const {themes} = require("prism-react-renderer")
-const lightCodeTheme = themes.github
-const darkCodeTheme = themes.dracula
+const { themes } = require("prism-react-renderer");
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Renku Blog',
+  title: "Renku Blog",
   // tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: 'https://swissdatasciencecenter.github.io',
+  url: "https://swissdatasciencecenter.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/renku-blog/',
+  baseUrl: "/renku-blog/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'SwissDataScienceCenter', // Usually your GitHub org/user name.
-  projectName: 'renku-blog', // Usually your repo name.
+  organizationName: "SwissDataScienceCenter", // Usually your GitHub org/user name.
+  projectName: "renku-blog", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: false,
         blog: {
-          routeBasePath: '/',
+          routeBasePath: "/",
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/SwissDataScienceCenter/renku-blog/tree/main/',
+            "https://github.com/SwissDataScienceCenter/renku-blog/tree/main/",
+
+          blogTitle: "",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.scss'),
+          customCss: require.resolve("./src/css/custom.scss"),
         },
       }),
     ],
@@ -58,86 +60,79 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: 'Renku Blog',
+        title: "Renku Blog",
         logo: {
-          alt: 'Renku Logo',
-          src: 'img/favicon.svg',
+          alt: "Renku Logo",
+          src: "img/favicon.svg",
         },
         items: [
-          // {
-          //   type: 'docSidebar',
-          //   sidebarId: 'tutorialSidebar',
-          //   position: 'left',
-          //   label: 'Tutorial',
-          // },
-          // {to: '/', label: 'Blog', position: 'left'},
+          { to: "/tags", label: "Tags", position: "left" },
           {
-            href: 'https://github.com/SwissDataScienceCenter/renku-blog',
-            label: 'GitHub',
-            position: 'right',
+            href: "https://github.com/SwissDataScienceCenter/renku-blog",
+            label: "GitHub",
+            position: "right",
           },
         ],
-        style: 'dark',
+        style: "dark",
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
-          // {
-          //   title: 'Docs',
-          //   items: [
-          //     {
-          //       label: 'Tutorial',
-          //       to: '/docs/intro',
-          //     },
-          //   ],
-          // },
           {
-            title: 'Community',
+            title: "About Renku",
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: "Renku",
+                href: "https://renkulab.io",
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: "Documentation",
+                href: "https://renku.readthedocs.io/en/stable",
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: "Get Started",
+                href: "https://renku.readthedocs.io/en/stable/tutorials/01_firststeps.html",
+              },
+              {
+                label: "Help",
+                href: "https://renkulab.io/help",
               },
             ],
           },
           {
-            title: 'More',
+            title: "Community",
             items: [
-              // {
-              //   label: 'Blog',
-              //   to: '/blog',
-              // },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: "Forum",
+                href: "https://renku.discourse.group/",
+              },
+              {
+                label: "Chat (Gitter)",
+                href: "https://gitter.im/SwissDataScienceCenter/renku",
+              },
+              {
+                label: "GitHub",
+                href: "https://github.com/SwissDataScienceCenter/renku",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} SDSC`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
       colorMode: {
-        defaultMode: 'light',
+        defaultMode: "light",
         disableSwitch: true,
-        respectPrefersColorScheme: false
-      }
+        respectPrefersColorScheme: false,
+      },
     }),
 
-    plugins: ['docusaurus-plugin-sass'],
+  plugins: ["docusaurus-plugin-sass"],
 };
 
 module.exports = config;
