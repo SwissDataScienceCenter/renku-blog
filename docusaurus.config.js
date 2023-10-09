@@ -65,7 +65,7 @@ const config = {
         title: "Renku Blog",
         logo: {
           alt: "Renku Logo",
-          src: "img/favicon.svg",
+          src: "img/renku-frog-192x192.png",
         },
         items: [
           { to: "/tags", label: "Tags", position: "left" },

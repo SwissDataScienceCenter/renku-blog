@@ -4,6 +4,8 @@
  * work well for content-centric websites.
  */
 
+@import "./inter.css";
+
 $renku-green: rgb(0, 149, 104);
 $renku-blue: rgb(1, 25, 45);
 
@@ -20,6 +22,12 @@ $renku-blue: rgb(1, 25, 45);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   --ifm-navbar-link-hover-color: var(--ifm-color-primary-lighter);
+
+  --ifm-font-family-base: "Inter", system-ui, -apple-system, sans-serif;
+
+  @supports (font-variation-settings: normal) {
+    --ifm-font-family-base: "Inter var", system-ui, -apple-system, sans-serif;
+  }
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
