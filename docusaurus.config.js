@@ -62,10 +62,10 @@ const config = {
       // Replace with your project's social card
       image: "img/renku-social-card.png",
       navbar: {
-        title: "Renku Blog",
+        title: "Blog",
         logo: {
           alt: "Renku Logo",
-          src: "img/renku-frog-192x192.png",
+          src: "img/renku-logo.svg",
         },
         items: [
           { to: "/tags", label: "Tags", position: "left" },
@@ -81,10 +81,10 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "About Renku",
+            title: "Learn",
             items: [
               {
-                label: "Renku",
+                label: "About Renku",
                 href: "https://renkulab.io",
               },
               {
@@ -115,6 +115,36 @@ const config = {
               {
                 label: "GitHub",
                 href: "https://github.com/SwissDataScienceCenter/renku",
+              },
+            ],
+          },
+          {
+            title: "Follow us",
+            items: [
+              {
+                label: "X",
+                href: "https://twitter.com/RenkuIO",
+              },
+              {
+                label: "YouTube",
+                href: "https://www.youtube.com/channel/UCMF2tBtWU1sKWvtPl_HpI4A",
+              },
+              {
+                label: "Medium",
+                href: "https://medium.com/the-renku-blog",
+              },
+            ],
+          },
+          {
+            title: "About",
+            items: [
+              {
+                label: "Why Renku?",
+                href: "https://renku.readthedocs.io/en/stable/introduction/why.html",
+              },
+              {
+                label: "Who we are?",
+                href: "https://datascience.ch/who-we-are/",
               },
             ],
           },
