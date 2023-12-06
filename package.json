@@ -16,8 +16,8 @@
     "format": "prettier -w ."
   },
   "dependencies": {
-    "@docusaurus/core": "^3.0.0",
-    "@docusaurus/preset-classic": "^3.0.0",
+    "@docusaurus/core": "^3.0.1",
+    "@docusaurus/preset-classic": "^3.0.1",
     "@mdx-js/react": "^2.3.0",
     "clsx": "^1.2.1",
     "docusaurus-plugin-sass": "^0.2.5",
@@ -27,8 +27,8 @@
     "sass": "^1.68.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.0.0",
-    "@docusaurus/tsconfig": "^3.0.0",
+    "@docusaurus/module-type-aliases": "^3.0.1",
+    "@docusaurus/tsconfig": "^3.0.1",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   },
