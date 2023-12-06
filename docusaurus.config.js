@@ -47,7 +47,9 @@ const config = {
           editUrl:
             "https://github.com/SwissDataScienceCenter/renku-blog/tree/main/",
 
-          blogTitle: "",
+          blogTitle: "The Renku blog",
+          blogDescription:
+            "Blog about reproducibility in data science, technical solutions to engineering problems and use-cases of the Renku platform.",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.scss"),
@@ -62,13 +64,15 @@ const config = {
       // Replace with your project's social card
       image: "img/renku-social-card.png",
       navbar: {
-        title: "Blog",
+        title: "",
         logo: {
           alt: "Renku Logo",
           src: "img/renku-logo.svg",
+          href: "https://renkulab.io/",
         },
         items: [
-          { to: "/tags", label: "Tags", position: "left" },
+          { to: "/", label: "Articles", position: "right" },
+          { to: "/tags", label: "Tags", position: "right" },
           {
             href: "https://github.com/SwissDataScienceCenter/renku-blog",
             label: "GitHub",
@@ -121,10 +125,6 @@ const config = {
           {
             title: "Follow us",
             items: [
-              {
-                label: "X",
-                href: "https://twitter.com/RenkuIO",
-              },
               {
                 label: "YouTube",
                 href: "https://www.youtube.com/channel/UCMF2tBtWU1sKWvtPl_HpI4A",
