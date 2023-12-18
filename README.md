@@ -3,6 +3,7 @@
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
+Follow the instructions in the [yarn source page](https://classic.yarnpkg.com/lang/en/docs/install/)
 
 ```
 $ yarn
