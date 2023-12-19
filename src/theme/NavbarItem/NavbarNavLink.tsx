@@ -2,6 +2,7 @@ import Link from "@docusaurus/Link";
 import isInternalUrl from "@docusaurus/isInternalUrl";
 import { isRegexpStringMatch } from "@docusaurus/theme-common";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import type { Props } from "@theme/NavbarItem/NavbarNavLink";
 
 // Original <NavbarNavLink> but with the <IconExternalLink> removed.
 export default function NavbarNavLink({
@@ -14,7 +15,7 @@ export default function NavbarNavLink({
   isDropdownLink,
   prependBaseUrlToHref,
   ...props
-}) {
+}: Props) {
   // TODO all this seems hacky
   // {to: 'version'} should probably be forbidden, in favor of {to: '/version'}
   const toUrl = useBaseUrl(to);
