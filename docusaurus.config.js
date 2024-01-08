@@ -68,7 +68,6 @@ const config = {
         logo: {
           alt: "Renku Logo",
           src: "img/renku-logo.svg",
-          href: "https://renkulab.io/",
         },
         items: [
           { to: "/", label: "Articles", position: "right" },
