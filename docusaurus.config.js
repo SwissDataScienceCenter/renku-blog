@@ -68,7 +68,7 @@ const config = {
         logo: {
           alt: "Renku Logo",
           src: "img/renku-logo.svg",
-          href: "https://renkulab.io/",
+          href: "https://swissdatasciencecenter.github.io/renku-blog/",
         },
         items: [
           { to: "/", label: "Articles", position: "right" },
