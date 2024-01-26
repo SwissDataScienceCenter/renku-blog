@@ -26,18 +26,26 @@ This plugin provides a graphical representation of the renku project's knowledge
 In this way, the ability to have a live overview of the ongoing development for real-time monitoring is introduced.
 The image below shows an example of the graph during a Renkulab session, with information about the execution of a notebook (`papermill` command).
 
-![image](image_1.png)
+<div align="center">
+<img width="75%" src="image_1.png"/>
+</div>
 
-To initiate or access the live graph visualization during your session, simply click on the Graph icon located on the main page, as shown in the image below.
+To initiate or access the live graph visualization during your session, simply click on the Graph icon located on the main page, as shown in the image below. This icon will be avialable in the session upon installation of the plugin.
 
-![image](image_2.png)
+<div align="center">
+<img width="75%" src="image_2.png"/>
+</div>
 
 As mentioned above, a set of CLI commands are also offered, in particular these are:
 
 * `display`: to generate a representation of the graph over an output image.
 * `show-graph`: to start an interactive visualization of the graph over the browser.
 
-More technical details are presented in the README of the repo page: https://github.com/oda-hub/renku-graph-vis/
+The following video shows the installation process of the plugin
+
+![](demo_video_plugins_installation_faster_labelled.mp4)
+
+More technical details (including the installation) are presented in the README of the repo page: https://github.com/oda-hub/renku-graph-vis/
 
 ### `renku-aqs-annotation`
 
@@ -46,6 +54,8 @@ In particular, the plugin intercepts several key [`astroquery`](https://astroque
 
 In the image below, the graph produced by the `renku-graph-vis` plugin during a renkulab session, exposes the information added to the project Knowledge Graph as a result of the interception of the `astroquery` methods. Specifically, it can be seen that during a `papermill` run of the `test-notebook.ipynb` notebook (that produced `out.ipynb` as an output notebook) a call to the `astroquery` method `query_object`, using the `SimbadClass`, has been detected. This notebook is requesting the object `Mrk 421` object. The highlighted labels on the edges provide information about the relationship between the two nodes: during the `papermill`execution, a call to the `query_object` method is executed (call label) and in turn, this requests the Astrophysical Object `Mrk 421`.
 
-![image](image_3.png)
+<div align="center">
+<img width="75%" src="image_3.png"/>
+</div>
 
 More technical details can be found in the `README` of the repo page: https://github.com/oda-hub/renku-aqs-annotation
