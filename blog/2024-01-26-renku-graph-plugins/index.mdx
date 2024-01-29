@@ -8,11 +8,22 @@ tags:
   - renku-aqs-annotation
 ---
 
-## Support the workflow development via renku plugin
+# Support the workflow development via renku plugin
 
-To support the development of workflows in Renku, a set of dedicated functionalities, provided as Renku plugins, are made available. Specifically, these plugins are:
+## What is a workflow
 
-* `renku-graph-vis`: to offer a visualization of the project's Knowledge Graph.
+Workflows are all things that can be computed, broadly speaking. For reproducibility, we want our workflows to be repeatable: producing the same output every time it is computed. This looks easy enough in first approximation, but might be harder to achieve than it seems when the workflow relies on external data and computational resources.
+
+An example of a workflow is represented by a jupyter notebook that derives some astronomical information (eg lightcurve in the GeV gamma-ray band) using data found in a particular astronomical data archive.
+
+[//]: # (TODO add a reference to the guide-development in hugo-odahub ?)
+More information about the development of a workflow can be found at [url](url)
+
+## Facilitate the development of a workflow in Renku via a group of dedicated plugins
+
+To support the development of workflows in Renku, a set of dedicated functionalities, provided as Renku plugins, are made available. Specifically, these are:
+
+* `renku-graph-vis`: to offer a real-time interactive visualization of the project's Knowledge Graph.
 * `renku-aqs-annotation`: to Intercept calls to astroquery functions and store them in the project's Knowledge Graph.
 
 ### `renku-graph-vis`
