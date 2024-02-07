@@ -2,11 +2,15 @@
 slug: renku-graph-plugins
 title: |
   Support the workflow development via renku plugin
-authors: [Gabriele Barni, Volodymyr Savchenko]
+authors: [gabriele, volodymyr]
 tags:
   - renku-graph-vis
   - renku-aqs-annotation
 ---
+
+import image_1 from './image_1.png';
+import image_2 from './image_2.png';
+import image_3 from './image_3.png';
 
 # Support the workflow development via renku plugin
 
@@ -37,13 +41,13 @@ In this way, the ability to have a live overview of the ongoing development for 
 The image below shows an example of the graph during a Renkulab session, with information about the execution of a notebook (`papermill` command).
 
 <div align="center">
-<img width="75%" src="image_1.png"/>
+<img width="75%" src={image_1}/>
 </div>
 
 To initiate or access the live graph visualization during your session, simply click on the Graph icon located on the main page, as shown in the image below. This icon will be avialable in the session upon installation of the plugin.
 
 <div align="center">
-<img width="75%" src="image_2.png"/>
+<img width="75%" src={image_2}/>
 </div>
 
 As mentioned above, a set of CLI commands are also offered, in particular these are:
@@ -69,7 +73,7 @@ In particular, the plugin intercepts several key [`astroquery`](https://astroque
 In the image below, the graph produced by the `renku-graph-vis` plugin during a renkulab session, exposes the information added to the project Knowledge Graph as a result of the interception of the `astroquery` methods. Specifically, it can be seen that during a `papermill` run of the `test-notebook.ipynb` notebook (that produced `out.ipynb` as an output notebook) a call to the `astroquery` method `query_object`, using the `SimbadClass`, has been detected. This notebook is requesting the object `Mrk 421` object. The highlighted labels on the edges provide information about the relationship between the two nodes: during the `papermill`execution, a call to the `query_object` method is executed (call label) and in turn, this requests the Astrophysical Object `Mrk 421`.
 
 <div align="center">
-<img width="75%" src="image_3.png"/>
+<img width="75%" src={image_3}/>
 </div>
 
 More technical details can be found in the `README` of the repo page: https://github.com/oda-hub/renku-aqs-annotation
