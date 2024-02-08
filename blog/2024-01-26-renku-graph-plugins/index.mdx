@@ -11,8 +11,11 @@ tags:
 import image_1 from './image_1.png';
 import image_2 from './image_2.png';
 import image_3 from './image_3.png';
+import image_4 from './image_4.png'
 
 # Support the workflow development via renku plugin
+
+[RenkuLab](http://renkulab.io/) enables the development of workflows in a very convenient way. 
 
 ## What is a workflow
 
@@ -20,8 +23,12 @@ Workflows are all things that can be computed, broadly speaking. For reproducibi
 
 An example of a workflow is represented by a jupyter notebook that derives some astronomical information (eg lightcurve in the GeV gamma-ray band) using data found in a particular astronomical data archive.
 
+<div align="center">
+<img width="75%" src={image_4}/>
+</div>
+
 [//]: # (TODO add a reference to the guide-development in hugo-odahub ?)
-More information about the development of a workflow can be found at [url](url)
+More information about the development of a workflow can be found at [url](https://odahub.io/docs/guide-development/)
 
 ## Facilitate the development of a workflow in Renku via a group of dedicated plugins
 
@@ -37,8 +44,7 @@ This plugin provides a graphical representation of the renku project's knowledge
 * From within the renkulab session
 * Via a set of CLI commands. 
  
-In this way, the ability to have a live overview of the ongoing development for real-time monitoring is introduced.
-The image below shows an example of the graph during a Renkulab session, with information about the execution of a notebook (`papermill` command).
+The primary benefit introduced is the ability to have a live overview of the ongoing development within an interactive Renku session. The image below shows an example of the graph during a Renkulab session, with information about the execution of a notebook (`papermill` command).
 
 <div align="center">
 <img width="75%" src={image_1}/>
