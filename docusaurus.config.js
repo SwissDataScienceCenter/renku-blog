@@ -8,7 +8,8 @@ const darkCodeTheme = themes.dracula;
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Renku Blog",
-  // tagline: 'Dinosaurs are cool',
+  tagline:
+    "Nothing lasts forever - except for sustainable data science done with Renku platform, since 2018.",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -129,8 +130,8 @@ const config = {
                 href: "https://www.youtube.com/channel/UCMF2tBtWU1sKWvtPl_HpI4A",
               },
               {
-                label: "Medium",
-                href: "https://medium.com/the-renku-blog",
+                label: "Mastodon",
+                href: "https://fosstodon.org/@renku",
               },
             ],
           },
@@ -143,7 +144,7 @@ const config = {
               },
               {
                 label: "Who we are?",
-                href: "https://datascience.ch/who-we-are/",
+                href: "https://datascience.ch/team/",
               },
             ],
           },

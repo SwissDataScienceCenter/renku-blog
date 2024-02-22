@@ -16,11 +16,11 @@ export default function HomePageHeader() {
     <div className="container margin-top--lg">
       <div className="row">
         <section className="col col--9">
-          <Heading as="h1">About the Renku blog</Heading>
+          <Heading as="h1">The Renku blog</Heading>
           <p>
-            Here you will find articles about reproducibility in data science,
-            technical solutions to engineering problems and use-cases of the
-            Renku platform.
+            Posts about new Renku features, platform design, reproducibility in
+            data science, solutions to engineering challenges, and Renku
+            use-cases.
           </p>
         </section>
       </div>
