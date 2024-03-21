@@ -8,14 +8,15 @@ const darkCodeTheme = themes.dracula;
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Renku Blog",
-  // tagline: 'Dinosaurs are cool',
+  tagline:
+    "Nothing lasts forever - except for sustainable data science done with Renku platform, since 2018.",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://swissdatasciencecenter.github.io",
+  url: "https://blog.renkulab.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/renku-blog/",
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -47,7 +48,9 @@ const config = {
           editUrl:
             "https://github.com/SwissDataScienceCenter/renku-blog/tree/main/",
 
-          blogTitle: "",
+          blogTitle: "The Renku blog",
+          blogDescription:
+            "Blog about reproducibility in data science, technical solutions to engineering problems and use-cases of the Renku platform.",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.scss"),
@@ -62,13 +65,14 @@ const config = {
       // Replace with your project's social card
       image: "img/renku-social-card.png",
       navbar: {
-        title: "Renku Blog",
+        title: "",
         logo: {
           alt: "Renku Logo",
-          src: "img/renku-frog-192x192.png",
+          src: "img/renku-logo.svg",
         },
         items: [
-          { to: "/tags", label: "Tags", position: "left" },
+          { to: "/", label: "Articles", position: "right" },
+          { to: "/tags", label: "Tags", position: "right" },
           {
             href: "https://github.com/SwissDataScienceCenter/renku-blog",
             label: "GitHub",
@@ -81,10 +85,10 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "About Renku",
+            title: "Learn",
             items: [
               {
-                label: "Renku",
+                label: "About Renku",
                 href: "https://renkulab.io",
               },
               {
@@ -115,6 +119,32 @@ const config = {
               {
                 label: "GitHub",
                 href: "https://github.com/SwissDataScienceCenter/renku",
+              },
+            ],
+          },
+          {
+            title: "Follow us",
+            items: [
+              {
+                label: "YouTube",
+                href: "https://www.youtube.com/channel/UCMF2tBtWU1sKWvtPl_HpI4A",
+              },
+              {
+                label: "Mastodon",
+                href: "https://fosstodon.org/@renku",
+              },
+            ],
+          },
+          {
+            title: "About",
+            items: [
+              {
+                label: "Why Renku?",
+                href: "https://renku.readthedocs.io/en/stable/introduction/why.html",
+              },
+              {
+                label: "Who we are?",
+                href: "https://datascience.ch/team/",
               },
             ],
           },

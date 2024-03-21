@@ -12,6 +12,18 @@ leafty:
 
 elisabet:
   name: Elisabet Capon
-  title: Renku Community Manager
+  title: Community Manager @ Renku team
   url: https://github.com/bethcg
   image_url: https://github.com/bethcg.png
+
+jimena:
+  name: Jimena Dupré
+  title: Frontend Designer @ Renku team
+  url: https://github.com/jdupre81
+  image_url: https://github.com/jdupre81.png
+
+laura:
+  name: Laura Kinkead
+  title: Renku Product Manager
+  url: https://github.com/lokijuhy
+  image_url: https://github.com/lokijuhy.png

@@ -1,18 +1,18 @@
 # Website
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This website is built using [Docusaurus 3](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
 Follow the instructions in the [yarn source page](https://classic.yarnpkg.com/lang/en/docs/install/)
 
 ```
-$ yarn
+$ npm i
 ```
 
 ### Local Development
 
 ```
-$ yarn start
+$ npm run start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
@@ -20,23 +20,17 @@ This command starts a local development server and opens up a browser window. Mo
 ### Build
 
 ```
-$ yarn build
+$ npm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
 ### Deployment
 
-Using SSH:
+The blog is automatically deployed from the `main` branch.
 
-```
-$ USE_SSH=true yarn deploy
-```
+### Contributing
 
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+The easiest way to contribute a blog post is to fork this repository, add a new entry in the `blog` directory and make a pull request with your
+content! To preview your work, you might want to use a devcontainer in VSCode locally or use Codespaces on GitHub. Either way, the blog will automatically build and render in the browser. If the browser window does not automatically open, VSCode should alert you about the open port
+and offer to display it in the browser for you.
