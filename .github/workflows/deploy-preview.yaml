@@ -74,22 +74,22 @@ jobs:
         uses: azure/setup-helm@v4
       - name: Deploy helm chart
         env:
-          RENKU_RELEASE: renku-blog-ci-${{ github.event.number }}
+          RELEASE: renku-blog-ci-${{ github.event.number }}
           KUBECONFIG: "${{ github.workspace }}/renkubot-kube.config"
           RENKUBOT_KUBECONFIG: ${{ secrets.RENKUBOT_DEV_KUBECONFIG }}
           IMAGE_TAGS: ${{ steps.meta.outputs.tags }}
         run: |
-          RENKU_NAMESPACE=${RENKU_RELEASE}
+          NAMESPACE=${RELEASE}
           HOST=renku-blog-ci-${{ github.event.number }}.dev.renku.ch
           IMAGE=$(echo "$IMAGE_TAGS" | cut -d" " -f1)
           IMAGE_REPOSITORY=$(echo "$IMAGE" | cut -d":" -f1)
           IMAGE_TAG=$(echo "$IMAGE" | cut -d":" -f2)
           echo "$RENKUBOT_KUBECONFIG" > "$KUBECONFIG" && chmod 400 "$KUBECONFIG"
-          kubectl create namespace ${RENKU_NAMESPACE} || true
-          helm upgrade --install ${RENKU_RELEASE} ./helm-chart/renku-blog \
-            --namespace=${RENKU_NAMESPACE} --timeout 5m --wait --wait-for-jobs \
+          kubectl create namespace ${NAMESPACE} || true
+          helm upgrade --install ${RELEASE} ./helm-chart/renku-blog \
+            --namespace=${NAMESPACE} --timeout 5m --wait --wait-for-jobs \
             --set image.repository=${IMAGE_REPOSITORY} --set image.tag=${IMAGE_TAG} \
             --set ingress.enabled=true --set ingress.hosts[0].host=${HOST} \
             --set ingress.hosts[0].paths[0].path="/" --set ingress.hosts[0].paths[0].pathType="Prefix" \
-            --set ingress.tls[0].secretName="${RENKU_RELEASE}-tls" \
+            --set ingress.tls[0].secretName="${RELEASE}-tls" \
             --set ingress.tls[0].hosts[0]=${HOST}
