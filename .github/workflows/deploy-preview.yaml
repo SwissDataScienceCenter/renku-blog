@@ -97,8 +97,8 @@ jobs:
       - name: Deployment comment
         uses: peter-evans/create-or-update-comment@v4
         with:
-          token: ${{ secrets.RENKUBOT_GITHUB_TOKEN }}
+          # token: ${{ secrets.RENKUBOT_GITHUB_TOKEN }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             You can access the deployment of this PR at https://renku-blog-ci-${{ github.event.number }}.dev.renku.ch
-          reactions: 'rocket'
+          reactions: "rocket"
