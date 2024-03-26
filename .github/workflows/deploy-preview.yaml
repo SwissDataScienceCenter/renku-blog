@@ -32,6 +32,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: type=sha
       - name: Set up node
         uses: actions/setup-node@v3
         with:
@@ -53,3 +54,34 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+    environment:
+      name: renku-blog-ci-${{ github.event.number }}
+      url: https://renku-blog-ci-${{ github.event.number }}.dev.renku.ch
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Docker image metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: type=sha
+      - name: Set up Helm
+        uses: azure/setup-helm@v4
+      - name: Deploy helm chart
+        env:
+          RENKU_RELEASE: renku-blog-ci-${{ github.event.number }}
+          KUBECONFIG: "${{ github.workspace }}/renkubot-kube.config"
+          RENKUBOT_KUBECONFIG: ${{ secrets.RENKUBOT_DEV_KUBECONFIG }}
+          IMAGE_REPOSITORY: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          IMAGE_TAGS: ${{ steps.meta.outputs.tags }}
+        run: |
+          RENKU_NAMESPACE=${RENKU_RELEASE}
+          IMAGE_TAG=$(echo "$IMAGE_TAGS" | cut -d" " -f1)
+          echo "$RENKUBOT_KUBECONFIG" > "$KUBECONFIG" && chmod 400 "$KUBECONFIG"
+          kubectl create namespace ${RENKU_NAMESPACE} || true
+          helm upgrade --install ${RENKU_RELEASE} ./helm-charts/renku-blog --namespace=${RENKU_NAMESPACE} --timeout 5m --wait --wait-for-jobs --set image.repository=${IMAGE_REPOSITORY} --set image.tag=${IMAGE_TAG} --dry-run
