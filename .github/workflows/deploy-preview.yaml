@@ -27,7 +27,7 @@ jobs:
     outputs:
       image: ${{ steps.docker_image.outputs.image }}
       image_repository: ${{ steps.docker_image.outputs.image_repository }}
-      image_tag:  ${{ steps.docker_image.outputs.image_tag }}
+      image_tag: ${{ steps.docker_image.outputs.image_tag }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
