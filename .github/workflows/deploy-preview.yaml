@@ -67,8 +67,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=${{ steps.docker-image.outputs.image }}:buildcache
-          cache-to: type=registry,ref=${{ steps.docker-image.outputs.image }}:buildcache,mode=max
+          cache-from: type=registry,ref=${{ steps.docker-image.outputs.image_repository }}:buildcache
+          cache-to: type=registry,ref=${{ steps.docker-image.outputs.image_repository }}:buildcache,mode=max
 
   deploy:
     # Deploy job
