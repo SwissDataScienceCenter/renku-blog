@@ -84,4 +84,4 @@ jobs:
           IMAGE_TAG=$(echo "$IMAGE_TAGS" | cut -d" " -f1)
           echo "$RENKUBOT_KUBECONFIG" > "$KUBECONFIG" && chmod 400 "$KUBECONFIG"
           kubectl create namespace ${RENKU_NAMESPACE} || true
-          helm upgrade --install ${RENKU_RELEASE} ./helm-charts/renku-blog --namespace=${RENKU_NAMESPACE} --timeout 5m --wait --wait-for-jobs --set image.repository=${IMAGE_REPOSITORY} --set image.tag=${IMAGE_TAG} --dry-run
+          helm upgrade --install ${RENKU_RELEASE} ./helm-chart/renku-blog --namespace=${RENKU_NAMESPACE} --timeout 5m --wait --wait-for-jobs --set image.repository=${IMAGE_REPOSITORY} --set image.tag=${IMAGE_TAG} --dry-run
