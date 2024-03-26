@@ -7,7 +7,7 @@ tags:
   - renku 2.0
   - research
   - teaching
-image: ./image_1.png
+image: image_1.png
 ---
 
 Renku has evolved considerably over the past several years; from our strong
@@ -16,6 +16,10 @@ connections within and across communities. As we engaged with various research
 communities, we understood that one of the main struggles researchers face in
 collaborative projects is consolidating a scattered collection of resources
 across various providers, tools, and technologies.
+
+![Renku connecting the research ecosystem](./image_1.png)
+
+<!-- truncate -->
 
 We have therefore decided to refocus our efforts and (re)build the platform to
 try and address this gap in the ecosystem. We envision Renku as a platform that
@@ -34,7 +38,7 @@ just an evolution of the current one.
 
 ## Mix and match: code, data and compute
 
-To enable flexible use cases, Renku 2.0 is based on modular project
+To offer users flexibility, Renku 2.0 is based on modular project
 configurations. Users can bootstrap their projects with a mix of code
 repositories, data sources, and compute environments and evolve
 them as the project matures. For example, in an early stage of a project, a data
@@ -45,53 +49,60 @@ collaborate with others in a more structured way. Later on, someone else on the
 project might build a containerized app or dashboard to demonstrate the data
 properties and model results more easily with non-experts.
 
-Renku 2.0 will allow you to select the components that you need for your project
+Renku 2.0 allows you to select the components that you need for your project
 to work. Beyond the current capabilities that Renku already offers, you can
 leverage the flexibility of Renku 2.0 in multiple new situations, for example:
 
-- If you are testing out RenkuLab... and you want to bring your **existing GitHub repo** into a project and start a compute session from **the docker image you have already defined**.
+- If you are testing out RenkuLab... and you want to bring your **existing code repository** into a project.
+- If you are starting a new project... and you want to **start out with a basic compute environment**. Later, you will decide what data and code sources you need.
 - If you find an interesting dataset... and you want to **test it out in a live compute environment** so you can decide quickly if you want to move forward with it.
 - If you are working on a project that uses **multiple repositories** from multiple collaborators... and you want to use all of them in 1 Renku project together.
-- If you need to showcase your project... and you want to create a **dashboard that uses a different environment configuration than the development environment**.
+- If you need to showcase your project... and you want to create a **dedicated dashboard** for the public to view.
 
-A “Renku project” is where data science work gets done. For this, a few ingredients are required, namely:
+To enable these use-cases, Renku projects require a few ingredients: **data**, **code**,
+**containerized environments**, and **flexible compute** resources.
 
-- Data
-- Code
-- Compute Environment
-
-Renku’s role is about making it easy for researchers to **mix and match** the elements they need to get their work done. In addition, Renku makes these elements **searchable**, encourages their **reuse** between projects, and **illuminates connections** between them (even across projects) wherever needed. Renku accomplishes this by extracting and indexing useful metadata about each of those elements.
-
-!\[The required resources are connected with Renku](./image_2.png)
+![plug and play renku](./image_2.png)
 
 ### Data
 
-Data science projects need data! Users can connect different types of cloud data
-sources to their projects, such as S3 buckets and WebDAV resources. Projects
-may also bring published data into the platform where it can be staged on fast
-storage for more efficient processing. Data sources can be shared among
-individuals, groups or communities to simplify reuse. The access to external
-data sources is controlled by the 3rd party cloud storage provider.
+Data science projects need data! Users can connect different types of [cloud
+data sources](../cloud-storage) to their projects, such as S3 buckets and WebDAV
+resources. Projects may also bring published data into the platform where it can
+be staged on fast storage for more efficient processing. Data sources can be
+shared among individuals, groups or communities to simplify reuse. The access to
+external data sources is controlled by the 3rd party cloud storage provider.
 
 ### Code
 
-In Renku 2.0, users can bring git repositories into their project not only from
+In Renku 2.0, users can bring code repositories into their project not only from
 the connected Renku-managed GitLab instance, but also from external GitLab
 instances and GitHub! We encourage everyone to version their code, but if
-the project does not require versioning (yet), you are not obligated to use it,
-and you can start a Renku project with no code repository at all!
+the project does not require versioning (yet), you are not obligated to use it.
+You can start a Renku project with no code repository at all!
 
-### Compute Environment
+### Containerized Compute Environments
 
-Renku 2.0 will continue offering the possibility to work in the cloud, where all
+Renku 2.0 continues to offer the possibility of working in the cloud, where all
 project resources are available for all collaborators. For quick, uncomplicated
-data explorations, users will be able to start immediately from pre-configured
+data explorations, users can start working immediately from pre-configured
 images, loaded with some standard libraries depending on the desired programming
-language. In addition, users will be able to define their own environments to
+language. In addition, users can define their own environments to
 use in compute sessions; these can be annotated and shared so members of a
 community can benefit from each other’s efforts and use a consistent software
 stack. Furthermore, we plan to allow users to connect their Renku projects to
 external compute resources (e.g. HPC or other cloud compute).
+
+## Sharing and collaborating
+
+In addition to connecting all the required resources under one roof, Renku will
+make these elements **searchable**, encourage their **reuse** between
+projects, and illuminate **connections** between them (even across projects)
+wherever needed. This will be accomplished by extracting and indexing useful
+metadata about all of the project's components and making this information easily
+accessible through a platform-wide search.
+
+![Renku 2.0 search](./search-proto.png)
 
 ## UX Research
 
@@ -99,6 +110,8 @@ As we develop this new iteration of Renku, we rely on great feedback from our us
 to make sure that we stay on the right track. If you are interested in having a say
 how the project develops and contribute your thoughts to features that are in the pipeline,
 please [drop us an email](mailto:hello@renku.io)!
+
+![Renku 2.0 prototype](./image_3.png)
 
 ## Further information
 
