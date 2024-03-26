@@ -33,6 +33,17 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: type=sha
+      - name: Extract Docker image name
+        id: docker-image
+        env:
+          IMAGE_TAGS: ${{ steps.meta.outputs.tags }}
+        run: |
+          IMAGE=$(echo "$IMAGE_TAGS" | cut -d" " -f1)
+          IMAGE_REPOSITORY=$(echo "$IMAGE" | cut -d":" -f1)
+          IMAGE_TAG=$(echo "$IMAGE" | cut -d":" -f2)
+          echo "image=$IMAGE" >> "$GITHUB_OUTPUT"
+          echo "image_repository=$IMAGE_REPOSITORY" >> "$GITHUB_OUTPUT"
+          echo "image_tag=$IMAGE_TAG" >> "$GITHUB_OUTPUT"
       - name: Set up node
         uses: actions/setup-node@v3
         with:
@@ -56,8 +67,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache
-          cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache,mode=max
+          cache-from: type=registry,ref=${{ steps.docker-image.outputs.image }}:buildcache
+          cache-to: type=registry,ref=${{ steps.docker-image.outputs.image }}:buildcache,mode=max
 
   deploy:
     # Deploy job
