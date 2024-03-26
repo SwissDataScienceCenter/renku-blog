@@ -24,6 +24,10 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    outputs:
+      image: ${{ steps.docker_image.outputs.image }}
+      image_repository: ${{ steps.docker_image.outputs.image_repository }}
+      image_tag:  ${{ steps.docker_image.outputs.image_tag }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -34,7 +38,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: type=sha
       - name: Extract Docker image name
-        id: docker-image
+        id: docker_image
         env:
           IMAGE_TAGS: ${{ steps.meta.outputs.tags }}
         run: |
@@ -67,8 +71,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=${{ steps.docker-image.outputs.image_repository }}:buildcache
-          cache-to: type=registry,ref=${{ steps.docker-image.outputs.image_repository }}:buildcache,mode=max
+          cache-from: type=registry,ref=${{ steps.docker_image.outputs.image_repository }}:buildcache
+          cache-to: type=registry,ref=${{ steps.docker_image.outputs.image_repository }}:buildcache,mode=max
 
   deploy:
     # Deploy job
@@ -80,12 +84,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Docker image metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: type=sha
       - name: Set up Helm
         uses: azure/setup-helm@v4
       - name: Deploy helm chart
@@ -93,13 +91,12 @@ jobs:
           RELEASE: renku-blog-ci-${{ github.event.number }}
           KUBECONFIG: "${{ github.workspace }}/renkubot-kube.config"
           RENKUBOT_KUBECONFIG: ${{ secrets.RENKUBOT_DEV_KUBECONFIG }}
-          IMAGE_TAGS: ${{ steps.meta.outputs.tags }}
         run: |
           NAMESPACE=${RELEASE}
           HOST=renku-blog-ci-${{ github.event.number }}.dev.renku.ch
           IMAGE=$(echo "$IMAGE_TAGS" | cut -d" " -f1)
-          IMAGE_REPOSITORY=$(echo "$IMAGE" | cut -d":" -f1)
-          IMAGE_TAG=$(echo "$IMAGE" | cut -d":" -f2)
+          IMAGE_REPOSITORY=${{ needs.build.outputs.image_repository }}
+          IMAGE_TAG=${{ needs.build.outputs.image_tag }}
           echo "$RENKUBOT_KUBECONFIG" > "$KUBECONFIG" && chmod 400 "$KUBECONFIG"
           kubectl create namespace ${NAMESPACE} || true
           helm upgrade --install ${RELEASE} ./helm-chart/renku-blog \
