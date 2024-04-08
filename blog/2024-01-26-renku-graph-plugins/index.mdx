@@ -2,12 +2,23 @@
 slug: renku-graph-plugins
 title: |
   Support the workflow development via renku plugin
-authors: [gabriele, volodymyr]
+authors: 
+  - name: Gabriele Barni
+    title: Software engineer @ AstroORDAS project
+    url: https://github.com/burnout87
+    image_url: https://github.com/burnout87.png
+
+  - name: Volodymyr Savchenko
+    title: Astronomer @ AstroORDAS project
+    url: https://github.com/volodymyrss
+    image_url: https://github.com/volodymyrss.png
+    
 tags:
   - renku-graph-vis
   - renku-aqs-annotation
 ---
 
+import ReactPlayer from 'react-player'
 import image_1 from './image_1.png';
 import image_2 from './image_2.png';
 import image_3 from './image_3.png';
@@ -63,11 +74,25 @@ As mentioned above, a set of CLI commands are also offered, in particular these 
 
 The following video shows the installation process of the plugin:
 
-![](demo_video_plugins_installation_faster_labelled.mp4)
+<ReactPlayer 
+  playing 
+  controls 
+  url='/videos/demo_video_plugins_installation_faster_labelled.mp4' 
+  loop='true' 
+  width='100%'
+  height='100%'
+/>
 
 The following one instead gives a brief usage demo:
 
-![](demo_video_plugins_usage_faster_labelled.mp4)
+<ReactPlayer 
+  playing 
+  controls 
+  url='/videos/demo_video_plugins_usage_faster_labelled.mp4' l
+  oop='true'
+  width='100%'
+  height='100%'
+/>
 
 More technical details (including the installation) are presented in the README of the repo page: https://github.com/oda-hub/renku-graph-vis/
 

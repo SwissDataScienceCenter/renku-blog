@@ -27,3 +27,9 @@ This command generates static content into the `build` directory and can be serv
 ### Deployment
 
 The blog is automatically deployed from the `main` branch.
+
+### Contributing
+
+The easiest way to contribute a blog post is to fork this repository, add a new entry in the `blog` directory and make a pull request with your
+content! To preview your work, you might want to use a devcontainer in VSCode locally or use Codespaces on GitHub. Either way, the blog will automatically build and render in the browser. If the browser window does not automatically open, VSCode should alert you about the open port
+and offer to display it in the browser for you.
