@@ -1,0 +1,110 @@
+---
+slug: renku-graph-plugins
+title: |
+  Support the workflow development via renku plugin
+authors: 
+  - name: Gabriele Barni
+    title: Software engineer @ AstroORDAS project
+    url: https://github.com/burnout87
+    image_url: https://github.com/burnout87.png
+
+  - name: Volodymyr Savchenko
+    title: Astronomer @ AstroORDAS project
+    url: https://github.com/volodymyrss
+    image_url: https://github.com/volodymyrss.png
+    
+tags:
+  - renku-graph-vis
+  - renku-aqs-annotation
+---
+
+import ReactPlayer from 'react-player'
+import image_1 from './image_1.png';
+import image_2 from './image_2.png';
+import image_3 from './image_3.png';
+import image_4 from './image_4.png'
+
+# Support the workflow development via renku plugin
+
+[RenkuLab](http://renkulab.io/) enables the development of workflows in a very convenient way. 
+
+## What is a workflow
+
+Workflows are all things that can be computed, broadly speaking. For reproducibility, we want our workflows to be repeatable: producing the same output every time it is computed.
+
+An example of a workflow is represented by a jupyter notebook that derives some astronomical information (eg lightcurve in the GeV gamma-ray band) using data found in a particular astronomical data archive.
+
+<div align="center">
+<img width="75%" src={image_4}/>
+</div>
+
+[//]: # (TODO add a reference to the guide-development in hugo-odahub ?)
+More information about the development of a workflow can be found at [url](https://odahub.io/docs/guide-development/)
+
+## Facilitate the development of a workflow in Renku via a group of dedicated plugins
+
+To support the development of workflows in Renku, a set of dedicated functionalities, provided as Renku plugins, are made available. Specifically, these are:
+
+* `renku-graph-vis`: to offer a real-time interactive visualization of the project's Knowledge Graph.
+* `renku-aqs-annotation`: to Intercept calls to astroquery functions and store them in the project's Knowledge Graph.
+
+### `renku-graph-vis`
+
+This plugin provides a graphical representation of the renku project's knowledge graph in two ways:
+
+* From within the renkulab session
+* Via a set of CLI commands. 
+ 
+The primary benefit introduced is the ability to have a live overview of the ongoing development within an interactive Renku session. The image below shows an example of the graph during a Renkulab session, with information about the execution of a notebook (`papermill` command).
+
+<div align="center">
+<img width="75%" src={image_1}/>
+</div>
+
+To initiate or access the live graph visualization during your session, simply click on the Graph icon located on the main page, as shown in the image below. This icon will be avialable in the session upon installation of the plugin.
+
+<div align="center">
+<img width="75%" src={image_2}/>
+</div>
+
+As mentioned above, a set of CLI commands are also offered, in particular these are:
+
+* `display`: to generate a representation of the graph over an output image.
+* `show-graph`: to start an interactive visualization of the graph over the browser.
+
+The following video shows the installation process of the plugin:
+
+<ReactPlayer 
+  playing 
+  controls 
+  url='videos/demo_video_plugins_installation_faster_labelled.mp4' 
+  loop='true' 
+  width='100%'
+  height='100%'
+/>
+
+The following one instead gives a brief usage demo:
+
+<ReactPlayer 
+  playing 
+  controls 
+  url='videos/demo_video_plugins_usage_faster_labelled.mp4' l
+  oop='true'
+  width='100%'
+  height='100%'
+/>
+
+More technical details (including the installation) are presented in the README of the repo page: https://github.com/oda-hub/renku-graph-vis/
+
+### `renku-aqs-annotation`
+
+This plugin enables the tracking of the accesses to astronomical archives and services in the project Knowledge Graph.
+In particular, the plugin intercepts several key [`astroquery`](https://astroquery.readthedocs.io/en/latest/index.html) methods and stores annotations containing information about the calls to these methods (like the arguments used in the call itself) to the project's Knowledge Graph.
+
+In the image below, the graph produced by the `renku-graph-vis` plugin during a renkulab session, exposes the information added to the project Knowledge Graph as a result of the interception of the `astroquery` methods. Specifically, it can be seen that during a `papermill` run of the `test-notebook.ipynb` notebook (that produced `out.ipynb` as an output notebook) a call to the `astroquery` method `query_object`, using the `SimbadClass`, has been detected. This notebook is requesting the object `Mrk 421` object. The highlighted labels on the edges provide information about the relationship between the two nodes: during the `papermill`execution, a call to the `query_object` method is executed (call label) and in turn, this requests the Astrophysical Object `Mrk 421`.
+
+<div align="center">
+<img width="75%" src={image_3}/>
+</div>
+
+More technical details can be found in the `README` of the repo page: https://github.com/oda-hub/renku-aqs-annotation
