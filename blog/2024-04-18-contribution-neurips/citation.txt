@@ -1,8 +1,0 @@
-@inproceedings{
-ro{\v{s}}kar2023renku,
-title={Renku: a platform for sustainable data science},
-author={Rok Ro{\v{s}}kar and Chandrasekhar Ramakrishnan and Michele Volpi and Fernando Perez-Cruz and Lilian Gasser and Firat Ozdemir and Patrick Paitz and Mohammad Alisafaee and Philipp Fischer and Ralf Grubenmann and Eliza Jean Harris and Tasko Olevski and Carl Remlinger and Luis Salamanca and Elisabet Capon Garcia and Lorenzo Cavazzi and Jakub Chrobasik and Darlin Andrea Cordoba Osnas and Alessandro Degano and Jimena Dupre and Wesley Johnson and Eike Kettner and Laura Kinkead and Sean Murphy and Flora Thiebaut and Olivier Verscheure},
-booktitle={Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
-year={2023},
-url={https://openreview.net/forum?id=pX5xlL1T4C}
-}
