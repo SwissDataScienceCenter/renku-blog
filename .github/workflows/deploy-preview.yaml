@@ -23,6 +23,7 @@ env:
 jobs:
   # Build job
   build:
+    if: ${{ github.actor != "dependabot[bot]"" }}
     runs-on: ubuntu-latest
     outputs:
       image: ${{ steps.docker_image.outputs.image }}
@@ -79,6 +80,7 @@ jobs:
 
   deploy:
     # Deploy job
+    if: ${{ github.actor != "dependabot[bot]"" }}
     runs-on: ubuntu-latest
     needs: [build]
     environment:
