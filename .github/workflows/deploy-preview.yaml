@@ -52,7 +52,7 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v4
         with:
-          node-version: "18.18.0"
+          node-version: "20.17.0"
       - name: Set up Docker buildx
         uses: docker/setup-buildx-action@v3
       - name: Set up Docker
