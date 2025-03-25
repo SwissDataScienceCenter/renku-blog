@@ -8,10 +8,6 @@ on:
       - synchronize
       - reopened
 
-permissions:
-  contents: read
-  packages: write
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
 
@@ -33,6 +29,9 @@ jobs:
       image: ${{ steps.docker_image.outputs.image }}
       image_repository: ${{ steps.docker_image.outputs.image_repository }}
       image_tag: ${{ steps.docker_image.outputs.image_tag }}
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -87,6 +86,9 @@ jobs:
     environment:
       name: renku-blog-ci-${{ github.event.number }}
       url: https://renku-blog-ci-${{ github.event.number }}.dev.renku.ch
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
