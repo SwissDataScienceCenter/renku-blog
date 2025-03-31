@@ -1,0 +1,105 @@
+---
+slug: built-environments
+title: |
+  RenkuLab 0.67.0: Project Documentation, Private Data Connectors & Project Migration
+authors: [laura]
+tags:
+  - Release
+  - Renku 2.0
+# image: ./white_banner_top.png
+description: What's new on RenkuLab • March 2025
+---
+
+This month has been jam packed with new Renku features! Here are the highlights of the ones we're
+most excited about to help you collaborate in research and teaching.
+
+<!-- truncate -->
+
+# Create a custom Renku session environment from code
+
+Need a specific set of packages in your Renku session? Now you can customize exactly what's
+installed in your session with Renku-built environments. Simply connect a code repository containing
+a file with your project dependencies (e.g. an `environment.yml`), and let Renku build your session
+environment (aka docker image) for you!
+
+We're so excited about this feature we gave it a whole blog post of its own. Read more [here](../2025-03-28-built-envs/index.html)!
+
+# Add documentation to your Renku project
+
+Make your Renku projects your own with descriptions, links, images, formulas, and more. Click the
+pencil icon in the new Documentation section on the Project page to get started.
+
+![Renku Project with Documentation](./documentation.png)
+
+:::tip
+
+Want to know what markdown is supported on RenkuLab? Check out our [markdown
+guide](https://renku.notion.site/Writing-Documentation-in-Renku-Renku-s-Markdown-1a70df2efafc80329211c493917ff6e4?pvs=4)
+to get started.
+
+:::
+
+# Migrate your projects to Renku 2.0 automatically
+
+You can now easily migrate 1.0 projects to Renku 2.0. At the top of Renku 1.0 projects, you'll now
+see a banner at the top of the page inviting you to migrate to 2.0. Follow the guided steps to
+migrate your project to 2.0.
+
+![Renku Project with migration modal](./migration-banner.png)
+
+During migration, you will see an overview of how exactly each element of your project will be
+migrated.
+
+![Migration banner](./migration-modal.png)
+
+Once a project is migrated, everyone who views the project page will see a banner inviting them to
+the 2.0 version of the project.
+
+:::tip
+
+To learn more about project migration, check out our
+[documentation](https://renku.notion.site/How-to-migrate-a-Renku-1-0-project-to-Renku-2-0-1ac0df2efafc80a88e58e2b3db035110?pvs=4)
+
+:::
+
+# Create private data connectors
+
+Sometimes you want to connect data to a project without anyone else seeing it. For example, you may
+connect a personal web drive folder for accessing reference materials, but it doesn't make sense for
+anyone else in the project to see this data connector (or be prompted for credentials for it!).
+
+With this update, you can create data connectors for a project, for a group, or for personal use.
+And when you link a personal data connector to a project, that data connector stays private. Other
+project members will simply be informed that there is a data connector on the project they can't
+see.
+
+![Hidden data connector](./hidden-data-connector.png)
+
+:::tip
+
+Remember: Being able to see a Renku data connector is not the same as being able to access the data
+itself! Access to data connected with Renku is always managed externally by the system where the
+data lives. If the data requires credentials, Renku will never give another user access without
+getting valid credentials from that user.
+
+:::
+
+For more information about data connector permissions, see our
+[documentation](https://renku.notion.site/renku/Permissions-Roles-and-Access-0-67-0-13b0df2efafc803e9b57c30df1be6c0a?pvs=4).
+
+:::warning
+
+Are you missing access to data connectors you used to see? This update changes the relationship to
+data connectors for current projects. To update your data connector based on the new changes, see
+[How to resolve 'hidden' & 'visibility warning' data
+connectors](https://renku.notion.site/renku/How-to-resolve-hidden-visibility-warning-data-connectors-1c40df2efafc80309c7bc5ab6b2891a3?pvs=4).
+
+:::
+
+---
+
+We would love to hear your feedback on these new features! Let us know by writing us on our
+[forum](https://renku.discourse.group/).
+
+And if you're curious about what new features are in the ahead, check out our
+[roadmap](https://renku.notion.site/Roadmap-b1342b798b0141399dc39cb12afc60c9).
