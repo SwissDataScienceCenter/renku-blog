@@ -184,17 +184,20 @@ git push -u <new-origin> <current-branch>
 Here's a full, real-ish example (with identifiers removed :wink:):
 
 ```bash
+# STEP 1
 git clone https://gitlab.renkulab.io/my.username/example-repo.git
 
+# STEP 2
 # Create new GitHub repo at
 # https://github.com/my.username/example-repo
 
+# STEP 4
 cd example-repo
 git remote add github git@github.com:my.username/example-repo.git
-git push -u --all github master
+git push --all github
 
-# make some changes
-
+# STEP 5
+# make some code changes...
 git push -u github master
 
 ```
