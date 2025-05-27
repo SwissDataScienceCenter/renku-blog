@@ -69,17 +69,17 @@ transition with ease.
 
 ## What You Need to Do
 
-### If you have Renku Legacy projects:
+### Migrate Renku Legacy projects to 2.0
 
-**Migrate them to Renku 2.0.** We've built tools to make this straightforward - It's really just 2
-clicks! Your data, code, and project structure transfer over easily.
+To continue using projects currently in Renku Legacy, migrate them to 2.0 **by October 2025**. We've
+built tools to make this straightforward! Your data, code, and project
+structure transfer over easily.
 
-:::info
+Here's how to migrate your first project: from the Renku 2.0 Dashboard, look below the projects
+section to find the migration banner and click on **Migrate from Renku Legacy**. You'll have your
+first project migrated in 3 clicks!
 
-Want to know more about the differences between Renku Legacy and Renku 2.0? See our [Deep Dive
-Comparison](../deep-dive-2-0/).
-
-:::
+![migration-dashboard](migration-dashboard.png)
 
 :::tip
 
@@ -90,11 +90,18 @@ guide at the bottom of this post.
 
 :::
 
-### If you have code in the RenkuLab GitLab:
+:::info
 
-**Move your repositories to external providers.** GitHub.com and GitLab.com are popular choices and
-integrate seamlessly with Renku 2.0 projects. This actually makes your code more resilient since it
-is no longer tied to our infrastructure.
+Want to know more about the differences between Renku Legacy and Renku 2.0? See our [Deep Dive
+Comparison](../deep-dive-2-0/).
+
+:::
+
+### Migrate code repos in the RenkuLab GitLab to external providers
+
+**Move your repositories to external providers by December 2025.** GitHub.com and GitLab.com are
+popular choices and integrate seamlessly with Renku 2.0 projects. This actually makes your code more
+resilient since it is no longer tied to our infrastructure.
 
 :::tip
 
@@ -105,7 +112,7 @@ guide at the bottom of this post.
 
 :::
 
-### For course instructors:
+### Course instructors: Transition courses to 2.0 for the Fall semester
 
 **Plan to use Renku 2.0 for fall semester courses.** Compute sessions will not be available in Renku
 Legacy in the fall, so transition your course materials ahead of time.
@@ -114,8 +121,10 @@ Legacy in the fall, so transition your course materials ahead of time.
 
 We're here to support you through this transition! Migration tools are designed to be user-friendly,
 and you can find step-by-step guides for project and code repository migration right at the bottom
-of this post. If you need specific help with migration or have other questions, our team is ready to
-assist. You can write in our [forum](https://renku.discourse.group/) or send us an email at
+of this post.
+
+If you need specific help with migration or have other questions, our team is ready to assist. You
+can write in our [forum](https://renku.discourse.group/) or send us an email at
 [hello@renku.io](mailto:hello@renku.io).
 
 ---
@@ -145,20 +154,58 @@ our [documentation](https://renku.notion.site/Renku-2-0-How-To-Guides-900f417fc2
 ### How to Move a Code Repository to an External Provider
 
 Here are the steps to migrate a code repository from the RenkuLab GitLab to a provider such as
-[GitHub.com](http://GitHub.com) or GitLab.com:
+[GitHub.com](https://github.com) or [GitLab.com](https://gitlab.com):
 
-1. Clone your repository from the RenkuLab GitLab to your local machine
+1. **Clone your repository** from the RenkuLab GitLab to your local machine
 
-   ```markdown
+   ```bash
    git clone <renku-repo>
    ```
 
-2. Create a new empty repository in your chosen provider (for example GitLab.com or GitHub.com)
-3. Copy the clone URL for the new repository. We'll call this `new-remote`.
-4. Run the following commands from inside the repository to push the repository to the new git
-   repository provider.
-   ```markdown
+2. **Create a new empty repository** in your chosen provider (for example GitLab.com or GitHub.com)
+3. **Copy the clone URL for the new repository.** We'll call this URL `<new-remote>`.
+4. Run the following commands from inside the repository to **push the repository to the new git
+   repository provider**. You may want to name your new git origin (`<new-origin>`) to match the
+   provider, for example `github`.
+
+   ```bash
    cd <renku-repo>
-   git remote add neworigin <new-remote>
-   git push --all neworigin
+   git remote add <new-origin> <new-remote>
+   git push --all <new-origin>
    ```
+
+5. **Important - The next time you push:** Set your `git push` to push to the new origin (git
+   provider):
+
+```bash
+git push -u <new-origin> <current-branch>
+```
+
+Here's a full, real-ish example (with identifiers removed :wink:):
+
+```bash
+git clone https://gitlab.renkulab.io/my.username/example-repo.git
+
+# Create new GitHub repo at
+# https://github.com/my.username/example-repo
+
+cd example-repo
+git remote add github git@github.com:my.username/example-repo.git
+git push -u --all github master
+
+# make some changes
+
+git push -u github master
+
+```
+
+:::tip
+
+**Does your new git provider not support git LFS data?** For a short term workaround, run the
+following command to push your code while ignoring the git LFS data: `git push --no-verify`.
+
+In the long term, we recommend that you move your git LFS data to a cloud storage that you can
+connect to your Renku 2.0 project. Feel free to [get in touch](mailto:hello@renku.io) with us if you
+need help.
+
+:::
