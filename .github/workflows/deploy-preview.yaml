@@ -1,6 +1,9 @@
 # Workflow for making a preview deployment of the blog
 name: Deploy blog preview
 
+permissions:
+  contents: read
+
 on:
   pull_request:
     types:
@@ -9,7 +12,7 @@ on:
       - reopened
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref || github.run_id }}
 
 # Default to bash
 defaults:
@@ -83,29 +86,39 @@ jobs:
     if: ${{ github.actor != 'dependabot[bot]' }}
     runs-on: ubuntu-latest
     needs: [build]
-    environment:
-      name: renku-blog-ci-${{ github.event.number }}
-      url: https://renku-blog-ci-${{ github.event.number }}.dev.renku.ch
+    # NOTE: using GitHub deploy environments does not work with Azure at the moment
+    # environment:
+    #   name: renku-blog-ci-${{ github.event.number }}
+    #   url: https://renku-blog-ci-${{ github.event.number }}.dev.renku.ch
     permissions:
       contents: read
       pull-requests: write
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up Helm
         uses: azure/setup-helm@v4
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.CI_RENKU_AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.CI_RENKU_AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.CI_RENKU_AZURE_SUBSCRIPTION_ID }}
+      - name: Set AKS context
+        uses: azure/aks-set-context@v4
+        with:
+          resource-group: "renku-dev"
+          cluster-name: "aks-switzerlandnorth-renku-dev"
       - name: Deploy helm chart
         env:
           RELEASE: renku-blog-ci-${{ github.event.number }}
-          KUBECONFIG: "${{ github.workspace }}/renkubot-kube.config"
-          RENKUBOT_KUBECONFIG: ${{ secrets.RENKUBOT_DEV_KUBECONFIG }}
         run: |
           NAMESPACE=${RELEASE}
           HOST=renku-blog-ci-${{ github.event.number }}.dev.renku.ch
           IMAGE=$(echo "$IMAGE_TAGS" | cut -d" " -f1)
           IMAGE_REPOSITORY=${{ needs.build.outputs.image_repository }}
           IMAGE_TAG=${{ needs.build.outputs.image_tag }}
-          echo "$RENKUBOT_KUBECONFIG" > "$KUBECONFIG" && chmod 400 "$KUBECONFIG"
           kubectl create namespace ${NAMESPACE} || true
           helm upgrade --install ${RELEASE} ./helm-chart/renku-blog \
             --namespace=${NAMESPACE} --timeout 5m --wait --wait-for-jobs \

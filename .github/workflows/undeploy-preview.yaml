@@ -1,16 +1,16 @@
 # Workflow for removing preview deployments of the blog
 name: Undeploy blog preview
 
+permissions:
+  contents: read
+
 on:
   pull_request:
     types:
       - closed
 
-permissions:
-  contents: read
-
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref || github.run_id }}
 
 # Default to bash
 defaults:
@@ -22,22 +22,33 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  # Build job
+  # Undeploy job
   undeploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up Helm
         uses: azure/setup-helm@v4
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.CI_RENKU_AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.CI_RENKU_AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.CI_RENKU_AZURE_SUBSCRIPTION_ID }}
+      - name: Set AKS context
+        uses: azure/aks-set-context@v4
+        with:
+          resource-group: "renku-dev"
+          cluster-name: "aks-switzerlandnorth-renku-dev"
       - name: Uninstall helm chart
         env:
           RENKU_RELEASE: renku-blog-ci-${{ github.event.number }}
-          KUBECONFIG: "${{ github.workspace }}/renkubot-kube.config"
-          RENKUBOT_KUBECONFIG: ${{ secrets.RENKUBOT_DEV_KUBECONFIG }}
         run: |
           RENKU_NAMESPACE=${RENKU_RELEASE}
-          echo "$RENKUBOT_KUBECONFIG" > "$KUBECONFIG" && chmod 400 "$KUBECONFIG"
           helm uninstall ${RENKU_RELEASE} --namespace=${RENKU_NAMESPACE} \
             --timeout 5m --wait
           kubectl delete namespace ${RENKU_NAMESPACE} || true
