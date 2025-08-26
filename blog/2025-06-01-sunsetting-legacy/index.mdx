@@ -73,15 +73,19 @@ transition with ease.
 
 **January 2026**: RenkuLab GitLab decommissioned
 
-- Repositories remaining there will no longer be accessible.
+- Repositories remaining at `gitlab.renkulab.io` will no longer be accessible.
+- For links to `gitlab.renkulab.io` that you need to continue to work (for example, links published
+  in papers), [register the new home of your code
+  repository](https://www.notion.so/renku/2540df2efafc80a2bee5f1b7d247c28e?pvs=106) for automatic
+  redirection.
 
 ## What You Need to Do
 
 ### Migrate Renku Legacy projects to 2.0
 
-To continue using projects currently in Renku Legacy, migrate them to 2.0 **by October 2025**. We've
-built tools to make this straightforward! Your data, code, and project
-structure transfer over easily.
+To continue using projects currently in Renku Legacy, migrate them to 2.0 **by October 28, 2025**.
+We've built tools to make this straightforward! Your data, code, and project structure transfer over
+easily.
 
 Here's how to migrate your first project: from the Renku 2.0 Dashboard, look below the projects
 section to find the migration banner and click on **Migrate from Renku Legacy**. You'll have your
@@ -107,7 +111,7 @@ Comparison](../deep-dive-2-0/).
 
 ### Migrate code repos in the RenkuLab GitLab to external providers
 
-**Move your repositories to external providers by December 2025.** GitHub.com and GitLab.com are
+**Move your repositories to external providers by January 2026.** GitHub.com and GitLab.com are
 popular choices and integrate seamlessly with Renku 2.0 projects. This actually makes your code more
 resilient since it is no longer tied to our infrastructure.
 
@@ -156,6 +160,9 @@ to migrate to 2.0, which will guide you through the same process.
 
 ![migration-banner](migration-banner.png)
 
+Once you've migrated your project, after Renku Legacy is shut down, links to the Renku Legacy
+project will automatically redirect to the migrated Renku 2.0 project.
+
 To learn more about project migration, check out
 our [documentation](https://renku.notion.site/Renku-2-0-How-To-Guides-900f417fc205439789a9fbdc5cadcec8?p=1ac0df2efafc80a88e58e2b3db035110&pm=s).
 
@@ -185,9 +192,22 @@ Here are the steps to migrate a code repository from the RenkuLab GitLab to a pr
 5. **Important - The next time you push:** Set your `git push` to push to the new origin (git
    provider):
 
-```bash
-git push -u <new-origin> <current-branch>
-```
+   ```bash
+   git push -u <new-origin> <current-branch>
+   ```
+
+6. Don't forget to **update your Renku 2.0 project with the new git repository URL!** Copy the clone URL
+   of your new repository. Then, on the code repository in your Renku project, click 'Edit' and
+   replace the old URL with the new one.
+
+:::tip
+
+Would you like links to your original `gitlab.renkulab.io` code repository to
+**automatically redirect** to your new repository? [Register the new home of your code
+repository](https://www.notion.so/renku/2540df2efafc80a2bee5f1b7d247c28e?pvs=106) and we'll make
+it happen!
+
+:::
 
 Here's a full, real-ish example (with identifiers removed :wink:):
 
