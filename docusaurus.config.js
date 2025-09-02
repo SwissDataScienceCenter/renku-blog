@@ -99,7 +99,7 @@ const config = {
               },
               {
                 label: "Get Started",
-                href: "https://renku.readthedocs.io/en/stable/tutorials/01_firststeps.html",
+                href: "https://renku.notion.site/Get-started-with-Renku-1a50df2efafc800f8554e30fd7458fa6",
               },
               {
                 label: "Help",
