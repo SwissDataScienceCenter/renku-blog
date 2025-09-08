@@ -35,7 +35,10 @@ meant that either sometimes users could not get access to resources quickly enou
 leave things over-provisioned.
 
 As a result, we decided to migrate our base platform to an infrastructure that affords us the
-flexibility our users require while also giving us the tools we need to optimize costs.
+flexibility our users require while also giving us the tools we need to optimize costs. At the time 
+we needed to make a decision about where to migrate our production instance, the new Switch Cloud 
+offering was not quite in a production stage yet, so our choices were limited to the major public cloud offerings. 
+After testing all of them, the decision was made to choose Microsoft Azure as the new home for [renkulab.io](https://renkulab.io). 
 
 ## Can we continue using Switch (or other cloud) resources?
 
@@ -43,7 +46,8 @@ Yes! Recently we completed a big feature that allows us to connect [renkulab.io]
 to external compute resources. This means that those users who already have Switch subscriptions and
 would like to keep using those resources with the convenience of the Renku interface can absolutely
 do so! We are also making a joint effort with Switch engineers to make this integration as seamless
-as possible.
+as possible. This new integration will take advantage of the new Switch Cloud infrastructure, which should
+make it easier to manage and scale. 
 
 ![session-clouds](session-clouds.png)
 
