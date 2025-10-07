@@ -8,8 +8,8 @@ tags:
 description: From technical local installations to one-click data exploration
 ---
 
-From technical local installations to one-click data exploration: How the Materials Cloud Archive
-simplified researcher access to computational materials science data using RenkuLab.
+From technical local setup to one-click data exploration: How the Materials Cloud Archive simplified
+researcher access to computational materials science data using RenkuLab.
 
 ![intro-image](intro-image.png)
 
@@ -17,29 +17,38 @@ simplified researcher access to computational materials science data using Renku
 
 ## The Challenge: Valuable Data Behind Technical Barriers
 
-The [Materials Cloud Archive](https://www.materialscloud.org/home) (MCA) faced a common research
-problem: they hosted valuable computational materials science data, but accessing it required
-complex technical setup.
+Computational science generates valuable data that can accelerate research—given that it’s
+accessible to the community at large. This is where the [Materials Cloud
+Archive](https://www.materialscloud.org/home)  (MCA) was facing a bit of an issue: while the
+platform was hosting plenty of computational (materials science) research data, accessing it
+required a rather technical local setup, not accessible to everyone.
 
-"Exploring AiiDA archives historically required users to install AiiDA locally with complex
-dependencies like PostgreSQL and RabbitMQ," explains the development team. "Users also needed prior
-knowledge of AiiDA's API to explore the data."
+This is because the data consists of archives created using the AiiDA workflow manager, and,
+"exploring AiiDA archives historically required users to install AiiDA locally with complex
+dependencies like PostgreSQL and RabbitMQ," the development team explains. For this reason "users
+also needed prior knowledge of AiiDA's API to explore the data."
 
-This complexity meant valuable research data was effectively locked away from researchers who
-weren't already familiar with AiiDA. Even experienced users had to manually download archives,
-configure environments, and set up profiles before beginning actual research—wasting time that could
-be spent on discovery.
+The complexity meant valuable research data was effectively locked away from researchers who weren't
+already familiar with AiiDA. And even experienced users had to manually download archives, configure
+environments, and set up profiles before beginning actual research—wasting time that could be spent
+on discovery.
+
 
 ## The Solution: One-Click Access with Renku Launch Links
 
-The AiiDA team discovered Renku's collaborative data science platform and built an elegant
-integration using Renku's Launch Links. They created a template Renku project with AiiDA
-pre-installed, and then connected the two platforms via parameterized [launch
+Due to their shared commitment to research data provenance and shared Swiss origins, the AiiDA and
+Renku development teams have been in touch as early as 2019. The first integration was achieved
+by creating a template Renku project with AiiDA pre-installed. The connection between the two platforms
+was then achieved via parameterized [launch
 links](https://blog.renkulab.io/release-2025-05/#share-session-launch-links) that pass specific
-archive IDs directly into Renku sessions.
+MCA dataset archive IDs directly into Renku sessions.
+
+![mca.png](mca.png)
 
 Now, researchers simply click the Renku logo next to any AiiDA archive on MCA and are automatically
 launched into a fully configured environment with their selected data ready for exploration.
+
+![session.png](session.png)
 
 **Evolution to Renku 2.0:** The recent upgrade to Renku 2.0 brought significant improvements to the
 integration. The new implementation features:
@@ -55,6 +64,8 @@ details of the integration on the [AiiDA
 website](https://www.aiida.net/news/index/category/blog.html).
 
 ## The Impact: Lowering the Barrier to Access
+
+![mca-project-page.jpg](mca-project-page.jpg)
 
 What once required complex local installations, prior AiiDA knowledge, and manual configuration
 steps is now accessible with a single click. Researchers can discover data on MCA and immediately
