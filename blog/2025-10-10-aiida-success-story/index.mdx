@@ -1,11 +1,11 @@
 ---
 slug: aiida-success-story
 title: |
-  How PSI's Materials Software and Data Group Uses Renku to Lower the Barrier to Entry to Data Reuse
+  How PSI's Materials Software and Data Group Uses Renku to Lower the Barrier to Entry for Data Reuse
 authors: [laura, julian-aiida]
 tags:
   - Success Story
-description: From technical local installations to one-click data exploration
+description: From technical local installation to one-click data exploration
 ---
 
 From technical local setup to one-click data exploration: How the Materials Cloud Archive simplified
@@ -30,8 +30,7 @@ also needed prior knowledge of AiiDA's API to explore the data."
 
 The complexity meant valuable research data was effectively locked away from researchers who weren't
 already familiar with AiiDA. And even experienced users had to manually download archives, configure
-environments, and set up profiles before beginning actual research—wasting time that could be spent
-on discovery.
+environments, and set up profiles before beginning the meaningful work of data discovery.
 
 ## The Solution: One-Click Access with Renku Launch Links
 
@@ -60,7 +59,7 @@ integration. The new implementation features:
 You can explore the current implementation on
 [RenkuLab](https://renkulab.io/p/aiida/materials-cloud-archive), and learn more about the technical
 details of the integration on the [AiiDA
-website](https://www.aiida.net/news/index/category/blog.html).
+website](https://aiida.net/news/posts/2025-10-10-aiida-renku-integration.html).
 
 ## The Impact: Lowering the Barrier to Access
 
@@ -82,26 +81,25 @@ The AiiDA team is exploring further expansions using Renku 2.0's new capabilitie
 
 **Expanding data access via Renku Data Connectors:** The AiiDA team is exploring Renku 2.0's new
 data connectors to mount MCA archives directly in project filesystems, which would eliminate
-download times and storage limitations—crucial for large archives like a recent 15TB AiiDA project.
+download times and storage limitations— crucial for large archives.
 
 **Supporting the broader AiiDA App Ecosystem:** With Renku 2.0's support for arbitrary Docker
-images, they're exploring integrating other AiiDA applications like the Quantum ESPRESSO GUI.
-Hosting these apps on RenkuLab could reduce their own maintenance overhead.
+images, they're exploring expanding the integration to other AiiDA applications like AiiDAlab. With
+this, users would be able to use the graphical user interface (GUI) provided by AiiDAlab, rather
+than just a single jupyter landing notebook.
 
 ## The Power of Collaboration
 
-"Keep it simple- Why re-invent the wheel when a fitting solution already exists? Often it's better
-to invest time finding and familiarizing yourself with existing solutions rather than recreating
-your own." says the AiiDA team. "Renku has been very stable throughout the various steps of the
-integration. Their team has always been responsive and super helpful with any concerns or technical
-difficulties."
+Why reinvent the wheel when a fitting solution already exists? Often (but not always, of course) it
+can be the quicker path to a solution to invest the time finding and familiarizing oneself with
+existing infrastructure rather than recreating it by yourself from scratch---a classical case of
+KISS (_keep it simple, stupid_)." says the AiiDA team. "Renku has been very stable throughout the
+various steps of the integration. Their team has always been responsive and super helpful with any
+concerns or technical difficulties."
 
-By removing barriers between data discovery and analysis, RenkuLab enables more researchers to
-engage with computational datasets, ultimately accelerating scientific discovery.
-
-The Materials Cloud Archive integration demonstrates how research infrastructure can evolve from
-serving primarily expert users to welcoming the broader scientific community—turning technical
-barriers into bridges for collaboration and discovery.
+By removing barriers between data discovery and analysis, the Renku-Materials Cloud Archive
+integration demonstrates how the seamless integration data and compute platforms enables more
+researchers to engage with and reuse computational datasets, promoting scientific collaboration.
 
 ---
 
