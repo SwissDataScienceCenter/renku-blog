@@ -35,3 +35,9 @@ erwin-swisscat:
 kourosh-swisscat:
   name: Kourosh Shariat
   title: ML Engineer, ETHZ SwissCAT+
+
+julian-aiida:
+  name: Julian Geiger
+  title: Materials Software and Data Group
+  url: https://github.com/GeigerJ2
+  image_url: https://github.com/GeigerJ2.png
