@@ -147,8 +147,12 @@ const config = {
             title: "About",
             items: [
               {
-                label: "Why Renku?",
-                href: "https://renku.readthedocs.io/en/stable/introduction/why.html",
+                label: "What is Renku",
+                href: "https://renku.notion.site/What-is-Renku-1900df2efafc80839b26cbad43f24778",
+              },
+               {
+                label: "Roadmap",
+                href: "https://renku.notion.site/Roadmap-b1342b798b0141399dc39cb12afc60c9",
               },
               {
                 label: "Who we are?",
