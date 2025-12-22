@@ -24,9 +24,29 @@ features designed to make your collaborative research even smoother.
 From better hardware support to more precise permission settings, here is a look
 at what’s new in **Renku releases 2.10.0 through 2.12.0.**
 
----
+## Expanding Data Access: New Connectors for EnviDat and OpenBIS
 
-### 💻 **Seamless Support for ARM Architectures**
+We are thrilled to expand Renku’s "connecting hub" capabilities with two highly
+requested data integrations that make bringing your research data into your
+compute environment even faster.
+
+### Seamless EnviDat Integration
+
+Working with EnviDat—the environmental data portal of the Swiss Federal Research
+Institute WSL—is now effortless.
+
+**How it works**: Simply copy a dataset’s DOI and create a Renku data connector.
+
+**The Benefit**: Renku automatically syncs the metadata, making the data searchable within Renku (just like our Zenodo and Dataverse integrations). Once connected, the data is automatically mounted in your session, ready for immediate analysis without manual downloads.
+
+### Enhanced OpenBIS Support
+
+For researchers using OpenBIS, we’ve introduced a dedicated data connector type
+to streamline navigation and data fetching.
+
+**Note on Connectivity**: Many OpenBIS instances are hosted behind institutional firewalls. If you encounter any issues connecting to your instance from Renku, please reach out to us! We’re eager to help you get your data flowing smoothly.
+
+## 💻 **Seamless Support for ARM Architectures**
 
 If you are working on a modern Mac (Apple Silicon) or running heavy workloads on
 HPC clusters like CSCS’s **Alps (Daint)**, you know that architecture matters.
@@ -37,7 +57,7 @@ automatically build the correct image for you. To save you from troubleshooting
 headaches, we’ve also added a warning if you attempt to launch an image on an
 incompatible compute resource.
 
-### 👥 **Finer-Grained Group Permissions**
+## 👥 **Finer-Grained Group Permissions**
 
 We’ve refined how Group roles work to give you more control over your
 collaborative spaces.
@@ -50,7 +70,7 @@ collaborative spaces.
   that only Project Owners and Group Owners can change critical project
   configurations.
 
-### 🔌 **Smoother Repository Onboarding**
+## 🔌 **Smoother Repository Onboarding**
 
 Many of you rely on our GitHub and GitLab integrations to keep your code in
 sync. We heard your feedback that it wasn't always clear if an integration was
@@ -62,7 +82,7 @@ available but your credentials aren't linked, you'll see a prompt to connect
 them first. This ensures you enter your session ready to work, with all the
 permissions you need from the get-go.
 
-### 🔗 **Preserving Your Research: Legacy GitLab Redirects**
+## 🔗 **Preserving Your Research: Legacy GitLab Redirects**
 
 With the shutdown of Renku’s legacy GitLab instance (`gitlab.renkulab.io`)
 coming at the end of this month, we want to ensure your published work remains
@@ -75,9 +95,7 @@ form**](https://www.notion.so/2540df2efafc80a2bee5f1b7d247c28e?pvs=21) with your
 new repository location, and we will automatically redirect visitors from the
 old URL to the new one.
 
----
-
-### **Full Release Notes**
+## **Full Release Notes**
 
 While these are the highlights, there were many other smaller fixes and
 performance tweaks in these releases. For the curious, you can find the full
