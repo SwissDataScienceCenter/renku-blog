@@ -1,17 +1,19 @@
 ---
 slug: release-2026-01
 title: |
-  Renku Release | January 2026 •
+  Renku Release | January 2026 • Research data repository integrations • Better collaboration • Support for ARM architectures
 authors: [rokroskar]
 tags:
   - RenkuLab Update
   - Renku
   - Sessions
   - Integrations
+  - HPC
 description: What's new on RenkuLab • January 2025
 ---
 
-New in Renku this month: Better collaboration, broader support, and lasting research links!
+New in Renku for the New Year: We have added new integrations with research data repositories for
+frictionless data reuse, made it possible to build images for arm architectures, and improved collaboration flows!
 
 <!-- truncate -->
 
@@ -30,9 +32,9 @@ We are thrilled to expand Renku’s "connecting hub" capabilities with two highl
 requested data integrations that make bringing your research data into your
 compute environment even faster.
 
-### Seamless EnviDat Integration
+### EnviDat Integration
 
-Working with EnviDat—the environmental data portal of the Swiss Federal Research
+Working with EnviDat, the environmental data portal of the Swiss Federal Research
 Institute WSL—is now effortless.
 
 **How it works**: Simply copy a dataset’s DOI and create a Renku data connector.
@@ -42,14 +44,18 @@ Institute WSL—is now effortless.
 ### Enhanced OpenBIS Support
 
 For researchers using OpenBIS, we’ve introduced a dedicated data connector type
-to streamline navigation and data fetching.
+to streamline navigation and data fetching. You can configure your connector to point to a specific
+dataset in the OpenBIS instance for easier sharing.
 
 **Note on Connectivity**: Many OpenBIS instances are hosted behind institutional firewalls. If you encounter any issues connecting to your instance from Renku, please reach out to us! We’re eager to help you get your data flowing smoothly.
+
+We are grateful for the support of the [ETH Domain Open Research Data program](https://ethrat.ch/en/eth-domain/open-research-data/), which made the development of these
+integrations possible through project funding in Measure 2.
 
 ## 💻 **Seamless Support for ARM Architectures**
 
 If you are working on a modern Mac (Apple Silicon) or running heavy workloads on
-HPC clusters like CSCS’s **Alps (Daint)**, you know that architecture matters.
+HPC clusters like Alps (Daint) on CSCS, you know that architecture matters.
 
 We’ve now automated the image-building process for **arm64**. When configuring
 your launcher, simply select the appropriate architecture, and Renku will
@@ -67,7 +73,7 @@ collaborative spaces.
 - **The New Way:** Group Editors can now add new projects to a group, but they
   **cannot** modify the settings of projects they don't personally own.
 - **The Benefit:** This creates a clearer boundary for large teams, ensuring
-  that only Project Owners and Group Owners can change critical project
+  that only Project Owners and Group Owners remain in control of critical project
   configurations.
 
 ## 🔌 **Smoother Repository Onboarding**
@@ -84,9 +90,10 @@ permissions you need from the get-go.
 
 ## 🔗 **Preserving Your Research: Legacy GitLab Redirects**
 
-With the shutdown of Renku’s legacy GitLab instance (`gitlab.renkulab.io`)
-coming at the end of this month, we want to ensure your published work remains
-accessible.
+With the [shutdown of Renku’s legacy GitLab
+instance](https://blog.renkulab.io/release-2025-09/#renkulab-gitlab-shutdown-january-2026)
+(`gitlab.renkulab.io`) coming at the end of this month, we want to ensure your
+published work remains accessible.
 
 If you have moved a repository to a new home (like GitHub or our new GitLab
 instance) and want to ensure old links—such as those in published papers—don't
@@ -107,7 +114,7 @@ page](https://github.com/SwissDataScienceCenter/renku/releases).
 **Have questions about these updates?** Reach out to us on our [community forum](https://renku.discourse.group/)!
 
 🐸 Ready to get started? Hop into [renkulab.io](https://renkulab.io) and get a jumpstart with our
-[documentation](https://renku.notion.site/Documentation-db396cfc9a664cd2b161e4c6068a5ec9).
+[documentation](https://docs.renkulab.io).
 
 💬 We love to hear your feedback! Share questions, ideas, and suggestions with us on our
 [forum](https://renku.discourse.group/).
