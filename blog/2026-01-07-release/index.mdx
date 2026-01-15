@@ -36,12 +36,21 @@ compute environment even faster.
 
 ### EnviDat Integration
 
-Working with EnviDat, the environmental data portal of the Swiss Federal Research
+Working with data from [EnviDat](https://envidat.ch), the environmental data portal of the Swiss Federal Research
 Institute WSL, is now effortless.
 
 **How it works**: Simply copy a dataset’s DOI and [create a Renku data connector](https://docs.renkulab.io/en/latest/docs/users/data/guides/connect-data/connect-data-from-data-repositories#how-to-connect-a-dataset-from-a-data-repository-to-a-renku-project) in your project.
 
-**The Benefit**: Renku automatically syncs the metadata, making the data searchable within Renku (just like our Zenodo and Dataverse integrations). After setting the new data connector, when you launch a new session the data is automatically mounted, ready for immediate analysis without manual downloads.
+Renku automatically syncs the metadata, making the data searchable within Renku
+(just like our Zenodo and Dataverse integrations). When you launch a new session
+the data is automatically mounted, ready for immediate analysis without manual
+downloads.
+
+**Discover other datasets**: We have also made it easier to discover other datasets
+from specific providers; for example, on the search page you can use a [query](https://renkulab.io/search?q=publisher_name%3AEnviDat) like `publisher_name:envidat` to see
+all of the data connectors imported from EnviDat.
+
+![envidat](envidat.gif)
 
 ### Enhanced OpenBIS Support
 
@@ -51,8 +60,10 @@ dataset in the openBIS instance for easier sharing. This solution offers an alte
 
 **Note on connectivity**: Many openBIS instances are hosted behind institutional firewalls. If you encounter any issues connecting to your instance from Renku, please reach out to us! We’re eager to help you get your data flowing smoothly.
 
-We are grateful for the support of the [ETH Domain Open Research Data program](https://ethrat.ch/en/eth-domain/open-research-data/), which made the development of these
-integrations possible through project funding in Measure 2.
+![openbis](openbis.png)
+
+**Acknowledgment:** We are very grateful for the support of the [ETH Domain Open Research Data program](https://ethrat.ch/en/eth-domain/open-research-data/), which made the development of these
+integrations possible through project funding in Measure 2, and for our collaboration with the [NEXUS](https://www.nexus.ethz.ch/) team who implemented the OpenBIS feature.
 
 ## 💻 **Seamless Support for ARM Architectures**
 
@@ -60,10 +71,12 @@ If you are working on a modern Mac (Apple Silicon) or running heavy workloads on
 HPC clusters like Alps (Daint) on CSCS, you know that architecture matters.
 
 We’ve now automated the image-building process for **arm64**. When configuring
-[your launcher](https://docs.renkulab.io/en/latest/docs/users/sessions/guides/create-environment-with-custom-packages-installed#how-to-create-a-code-based-environment-for-your-renku-session), simply select the appropriate architecture, and Renku will
+[your launcher](https://docs.renkulab.io/en/latest/docs/users/sessions/guides/environments/create-environment-with-custom-packages-installed), simply select the appropriate architecture, and Renku will
 automatically build the correct image for you. To save you from troubleshooting
 headaches, we’ve also added a warning if you attempt to launch an image on an
 incompatible compute resource.
+
+![arm](arm-selector.png)
 
 ## 👥 **Finer-Grained Group Permissions**
 
@@ -74,11 +87,11 @@ collaborative spaces.
   all projects within a group.
 - **The New Way:** Group Editors can now add new projects to a group, but they
   **cannot** modify the settings of projects they don't personally own.
-- **The Benefit:** This creates a clearer boundary for large teams, ensuring
-  that only Project Owners and Group Owners remain in control of critical project
-  configurations.
 
-Check [group permissions](https://docs.renkulab.io/en/latest/docs/users/collaboration/permissions#group-permissions) in our documentation for further insights.
+This creates a clearer boundary for large teams, ensuring that only Project
+Owners and Group Owners remain in control of critical project configurations.
+
+Make sure to check the [group permissions page](https://docs.renkulab.io/en/latest/docs/users/collaboration/permissions#group-permissions) in our documentation for further insights.
 
 ## 🔌 **Smoother Repository Onboarding**
 
@@ -116,8 +129,6 @@ technical breakdown on our [GitHub Releases
 page](https://github.com/SwissDataScienceCenter/renku/releases).
 
 ---
-
-**Have questions about these updates?** Reach out to us on our [community forum](https://renku.discourse.group/)!
 
 🐸 Ready to get started? Hop into [renkulab.io](https://renkulab.io) and get a jumpstart with our
 [documentation](https://docs.renkulab.io).
