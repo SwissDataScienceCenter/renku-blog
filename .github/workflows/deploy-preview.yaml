@@ -37,7 +37,7 @@ jobs:
       packages: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Docker image metadata
         id: meta
         uses: docker/metadata-action@v5
@@ -56,7 +56,7 @@ jobs:
           echo "image_repository=$IMAGE_REPOSITORY" >> "$GITHUB_OUTPUT"
           echo "image_tag=$IMAGE_TAG" >> "$GITHUB_OUTPUT"
       - name: Set up node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: "22.18.0"
           cache: npm
@@ -97,7 +97,7 @@ jobs:
       id-token: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Set up Helm
         uses: azure/setup-helm@v4
       - name: Azure login

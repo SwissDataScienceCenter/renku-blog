@@ -101,11 +101,11 @@ const config = {
               },
               {
                 label: "Documentation",
-                href: "https://renku.readthedocs.io/en/stable",
+                href: "https://docs.renkulab.io/en/latest/",
               },
               {
                 label: "Get Started",
-                href: "https://renku.notion.site/Get-started-with-Renku-1a50df2efafc800f8554e30fd7458fa6",
+                href: "https://docs.renkulab.io/en/latest/docs/users/getting-started/",
               },
               {
                 label: "Help",
@@ -147,8 +147,12 @@ const config = {
             title: "About",
             items: [
               {
-                label: "Why Renku?",
-                href: "https://renku.readthedocs.io/en/stable/introduction/why.html",
+                label: "What is Renku",
+                href: "https://docs.renkulab.io/en/latest/docs/users/knowledge-base/about",
+              },
+              {
+                label: "Roadmap",
+                href: "https://renku.notion.site/Roadmap-b1342b798b0141399dc39cb12afc60c9",
               },
               {
                 label: "Who we are?",
