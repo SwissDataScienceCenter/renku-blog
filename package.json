@@ -23,15 +23,15 @@
     "clsx": "^2.1.1",
     "docusaurus-plugin-sass": "^0.2.6",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "sass": "^1.97.2"
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "sass": "^1.97.3"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.9.2",
     "@docusaurus/tsconfig": "^3.9.2",
-    "baseline-browser-mapping": "^2.9.15",
-    "prettier": "^3.8.0",
+    "baseline-browser-mapping": "^2.9.18",
+    "prettier": "^3.8.1",
     "typescript": "^5.9.3"
   },
   "browserslist": {
