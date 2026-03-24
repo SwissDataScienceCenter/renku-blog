@@ -101,7 +101,7 @@ jobs:
       - name: Set up Helm
         uses: azure/setup-helm@v4
       - name: Azure login
-        uses: azure/login@v2
+        uses: azure/login@v3
         with:
           client-id: ${{ secrets.CI_RENKU_AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.CI_RENKU_AZURE_TENANT_ID }}
