@@ -28,7 +28,7 @@
     "sass": "^1.99.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.9.2",
+    "@docusaurus/module-type-aliases": "^3.10.0",
     "@docusaurus/tsconfig": "^3.9.2",
     "baseline-browser-mapping": "^2.10.19",
     "prettier": "^3.8.2",
