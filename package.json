@@ -32,7 +32,7 @@
     "@docusaurus/tsconfig": "^3.10.0",
     "baseline-browser-mapping": "^2.10.19",
     "prettier": "^3.8.3",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.3"
   },
   "browserslist": {
     "production": [
