@@ -13,54 +13,80 @@ image: ./cover-image-post-june-2026.png
 description: What's new on RenkuLab • June 2026
 ---
 
-Our goal has always been to simplify the mechanics of collaborative data science.
-Right through our new integrations and improved experience for reusing data connectors, releases 
-**2.16.0** and **2.17.0** arrive to streamline how you work and share. Whether you
-are running data-intensive computations or preparing a project for public citation, 
-these latest enhancements ensure your project resources remain completely interconnected.
+Your data might live on Zenodo, your code on GitHub, and your compute in the
+cloud — but they shouldn't feel worlds apart. Renku is built to connect these
+pieces seamlessly, and our latest 2.16.0 and 2.17.0 updates make it easier than
+ever to work, share, and publish without the setup headache.
+
+Whether you are running data-intensive computations or preparing a project for
+public citation, these enhancements ensure your project resources remain
+completely interconnected.
 
 ![cover](cover-image-post-june-2026.png)
 
 <!-- truncate -->
 
-We have focused heavily on closing the loop of the research lifecycle. From launching your favorite 
-interactive workspaces to sharing your final, citable results with the global community. Here is how 
+We have focused heavily on closing the loop of the research lifecycle. From launching your favorite
+interactive workspaces to sharing your final, citable results with the global community. Here is how
 the latest updates make your daily research workflows much smoother.
 
 ## 🌟 **Publish Datasets to Zenodo Directly from RenkuLab**
 
-The transition from a finished analysis to a published dataset just got incredibly simple. You no longer 
-need to manually export files, log into external repositories and re-upload your data to get a permanent 
+The transition from a finished analysis to a published dataset just got incredibly simple. You no longer
+need to manually export files, log into external repositories and re-upload your data to get a permanent
 digital identifier for your work.
 
-**How it works:** You can now publish your datasets directly to **Zenodo** from within the RenkuLab interface. 
-With just a few clicks, you can deposit your data, trigger a publication workflow, and generate a permanent 
-**DOI (Digital Object Identifier)** for your research data. This ensures your outputs are instantly citable 
+**How it works:** You can now publish your datasets directly to **Zenodo** from within the RenkuLab interface.
+With just a few clicks, you can deposit your data, trigger a publication workflow, and generate a permanent
+**DOI (Digital Object Identifier)** for your research data. This ensures your outputs are instantly citable
 and compliant with European and Swiss Open Research Data (ORD) mandates without ever leaving your workspace.
 
+For more details on this feature, see the [docs](https://docs.renkulab.io/en/latest/docs/users/data/guides/export-data-connector-to-zenodo)
 
 ## 📦 **Streamlined User Experience for Integrations and Reusing Data Connectors**
 
-We gave our integration pages and user flows a major upgrade to make managing your connected tools entirely frictionless.
+We gave our integration pages and user flows a major upgrade to make managing your connected tools easier.
 
-* **Effortless Connector Selection:** When adding data connectors to a project, selecting from your existing endpoints is now much more intuitive. You can link your cloud storage options to a new workspace in seconds.
-* **Refined Integration UX:** The general user experience within RenkuLab integrations has been polished to minimize clicking and clarify configuration steps, keeping you focused on your code rather than your setup.
+* **Effortless Connector Selection:** When adding data connectors to a project,
+  selecting from your existing endpoints is now much more intuitive. You can
+  link your cloud storage options to a new workspace in seconds.
+
+* **Refined Integration UX:** The general user experience within RenkuLab
+  integrations has been polished to minimize clicking and clarify configuration
+  steps, keeping you focused on your code rather than your setup.
 
 
 ## 📊 **Build R Environments from Code**
 
-We haven't forgotten about our vibrant R community! Our underlying buildpacks have been updated to version 0.4.0, 
+We haven't forgotten about our vibrant R community! Our underlying buildpacks have been updated to version 0.6.0,
 introducing dedicated, first-class support for **R and RStudio session variants**.
 
-When launching a new interactive environment, you can seamlessly select pre-configured R environments that are 
-completely optimized to work alongside your connected data sources. 
+We currently support R projects using renv - if your repository includes an
+`renv.lock` file, Renku will automatically build an image with all the packages
+pre-installed for you. See the
+[docs](https://docs.renkulab.io/en/latest/docs/users/sessions/guides/environments/create-environment-with-custom-packages-installed#defining-an-r-environment-with-renv)
+for more details.
+
+## ⚡ Blazing-Fast Python Environments with uv
+
+Python users, this one is for you. We’ve added support for the uv package
+manager, which has been a top-tier request from our community for a while.
+Simply use the "build from code" launcher, point it to your uv-enabled
+repository and Renku will do the rest. Please [let us
+know](https://github.com/SwissDataScienceCenter/renku-frontend-buildpacks/issues?q=is%3Aissue%20state%3Aopen%20label%3Auv) if you encounter issues or quirks.
+
+**A Huge Community Shoutout**: This update wouldn't be here without our incredible
+collaborators at Idiap. They did the heavy lifting by contributing these
+environment improvements directly to the upstream Paketo buildpack ecosystem,
+making builds faster not just for Renku users, but for the broader open-source
+community. 🙌
 
 
 ## **Full Release Notes**
 
-Additionally, we fixed several session bugs, including resource class selection and CPU allocation tracking to ensure that when you launch a session, it has the exact 
-compute power it requested. While these are the highlights, there were other features addressing administrator requirements, smaller fixes and 
-performance tweaks in these releases. For the curious, you can find the full technical breakdown on our 
+Additionally, we fixed several session bugs, including resource class selection and resource allocation tracking to ensure that when you launch a session, it has the exact
+compute power it requested. While these are the highlights, there were other features addressing administrator requirements, smaller fixes and
+performance tweaks in these releases. For the curious, you can find the full technical breakdown on our
 [GitHub Releases page](https://github.com/SwissDataScienceCenter/renku/releases).
 
 ---
