@@ -31,7 +31,7 @@
     "@docusaurus/module-type-aliases": "^3.10.1",
     "@docusaurus/tsconfig": "^3.10.2",
     "baseline-browser-mapping": "^2.10.43",
-    "prettier": "^3.9.4",
+    "prettier": "^3.9.5",
     "typescript": "^6.0.3"
   },
   "browserslist": {
