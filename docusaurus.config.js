@@ -12,6 +12,18 @@ const config = {
     "Nothing lasts forever - except for sustainable data science done with Renku platform, since 2018.",
   favicon: "img/favicon.ico",
 
+  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+  future: {
+    // Improve compatibility with the upcoming Docusaurus v4
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true,
+      useCssCascadeLayers: false,  // Layers break styling on the blog for now
+      siteStorageNamespacing: true,
+      fasterByDefault: true,
+      mdx1CompatDisabledByDefault: true,
+    },
+  },
+
   // Set the production url of your site here
   url: "https://blog.renkulab.io",
   // Set the /<baseUrl>/ pathname under which your site is served
