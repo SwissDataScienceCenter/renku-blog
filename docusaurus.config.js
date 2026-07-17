@@ -17,7 +17,7 @@ const config = {
     // Improve compatibility with the upcoming Docusaurus v4
     v4: {
       removeLegacyPostBuildHeadAttribute: true,
-      useCssCascadeLayers: false,  // Layers break styling on the blog for now
+      useCssCascadeLayers: false, // Layers break styling on the blog for now
       siteStorageNamespacing: true,
       fasterByDefault: true,
       mdx1CompatDisabledByDefault: true,
