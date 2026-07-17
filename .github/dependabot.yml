@@ -14,6 +14,14 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      docusaurus:
+        patterns:
+          - "@docusaurus/*"
+      react:
+        patterns:
+          - "react"
+          - "react-*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
