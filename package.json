@@ -31,7 +31,7 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.10.1",
     "@docusaurus/tsconfig": "^3.10.2",
-    "baseline-browser-mapping": "^2.10.43",
+    "baseline-browser-mapping": "^2.11.1",
     "prettier": "^3.9.6",
     "typescript": "^7.0.2"
   },
