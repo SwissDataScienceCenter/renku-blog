@@ -2,7 +2,7 @@
 slug: release-2026-07
 title: |
   Renku Release | July 2026 • Non-Interactive Jobs, Private Images and Data Connector Pages
-authors: [rokroskar, laura]
+authors: [elisabet, rokroskar, laura]
 tags:
   - RenkuLab Update
   - Sessions
@@ -13,63 +13,72 @@ image: ./cover-image-post-july-2026.png
 description: What's new on RenkuLab • July 2026
 ---
 
-This release is about extending Renku beyond the interactive session. Your
-environment, your data, and your code stay in one place, whether you are running
-a long batch job, building a session from a private repository, or managing the
-data connectors your projects depend on.
+This release extends Renku beyond interactive sessions. You can now submit a job
+that runs the same code, in the same environment, against the same data —
+without holding a browser tab open. Also in these releases: private images from
+code and dedicated pages for data connectors.
 
 ![cover](cover-image-post-july-2026.png)
 
 {/* truncate */}
 
-Interactive sessions are where a lot of research starts, but not where it ends.
-With the 2.18.0 and 2.19.0 updates, you can now take the same project you are
-working in and run it as a non-interactive **job** without duplicating your
-setup or shipping your work off to another platform.
+Renku's data connectors and code repository integrations make it quick to run an
+exploratory analysis, but as a project matures and tasks run longer, the
+interactive session becomes the constraint. As a result, you move the project to
+your laptop or a cluster, or fall back on tricks to keep the session alive. Renku
+Jobs, in release 2.19.0, removes that constraint.
 
 ---
 
 ## 🚀 Run Non-Interactive Jobs, Right from the UI
 
-Not everything is interactive. Long training runs, large processing tasks, and
-scheduled pipelines are batch work.
+A single Renku project can now carry work from first exploration through to long
+training runs. An ML engineer can run model-training jobs while a domain expert
+tests the resulting model in a notebook or dashboard, with all data and code
+staying in the same place.
 
-Renku Jobs offer a frictionless jump from exploration to execution. You can now
-create a **Job launcher** right next to your Session launchers, in two ways:
+You can create a **Job launcher** right next to your Session launchers, in
+two ways:
 
 - **From your existing code:** Take a project you've already been working in and
   run it as a job. Choose "build from code," point to the same repository that
-  defines your interactive environment, and add one extra field, namely your job
-  command. Same environment, same data, no re-setup.
+  defines your interactive environment, and specify one extra field: the command
+  to run.
+
 - **From an external image:** Already have a Docker image you run elsewhere?
   Bring it to Renku as an external environment, set your command and arguments,
   and run it on Renku compute, even if it has no interactive front end.
-  **How it works:** A Job launcher has a **Submit** button instead of Launch. When
-  you submit, a modal lets you review the job command and resource class, and tweak
-  them for that run only, before it goes. The job then appears on your project
-  page, where you can **view logs**, **cancel** it, and track its **runtime**.
-  Unlike sessions, a single Job launcher can run many jobs at once.
 
-One project can now hold work at different stages and for different
-collaborators. An ML engineer can run model-training jobs while a domain expert
-tests the resulting model in a notebook or dashboard, while all data and code stay in the
-same place.
+![Session launcher selector](session-launcher-selector.png)
 
-{/* TODO: link to docs once published */}
+**How it works:** A Job launcher has a **Submit** button instead of Launch. When
+you submit, a modal lets you review the job command and resource class, and
+tweak them for that run only, before it goes. The job then appears on your
+project page, where you can **view logs**, **cancel** it, and track its
+**runtime**. Unlike sessions, a single Job launcher can run many jobs at once
+within your resource pool's limits.
 
-![session-launcher-selector.png](session-launcher-selector.png)
+![Project launchers](launchers.png)
+
+For more details on the new Jobs feature, have a look at the
+[documentation](https://docs.renkulab.io/en/latest/docs/users/compute/job/).
 
 ## 🔒 Building Private Images from Code
 
-The build-from-code experience introduced in earlier releases is now rounded out
-to support building session launchers from **private code repositories**. Images
-built from your repository can be kept private, so proprietary code and
-dependencies stay contained within your project rather than being exposed.
+Starting from release 2.18.0 you can build images for sessions and jobs from
+private code repositories, not just public ones. You no longer need to create
+ad-hoc public repositories just to build an image. Images built from your
+repository are kept private too, so proprietary code and dependencies stay
+contained within your project rather than being exposed.
+
+:::note
 
 Be aware that only collaborators with read access to your private code
-repository will be able to launch a session from it.
+repository will be able to launch a session or start a job from it.
 
-![private-code-environment.png](private-code-environment.png)
+:::
+
+![private code repository environments](private-code-environment.png)
 
 ## 🔗 Dedicated Pages for Data Connectors
 
@@ -78,10 +87,10 @@ connector** has a dedicated page too. From it, you can modify the connector's
 settings, explore its metadata, and see exactly which projects the connector is
 used in.
 
-To access the data connector page, click on top of the data connector. On the right
-hand side modal at the top next to the close icon, click on the **Open full page** icon.
+To access the data connector page, click a data connector to open its side-panel,
+then click the "Open full page" icon in the top right.
 
-![data-connector-page.png](data-connector-page.png)
+![data connector pages](data-connector-page.png)
 
 ## 🔧 Under the Hood: Fixes & Performance
 
