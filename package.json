@@ -26,12 +26,12 @@
     "prism-react-renderer": "^2.4.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "sass": "^1.101.6"
+    "sass": "^1.102.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.10.1",
     "@docusaurus/tsconfig": "^3.10.2",
-    "baseline-browser-mapping": "^2.11.1",
+    "baseline-browser-mapping": "^2.11.7",
     "prettier": "^3.9.6",
     "typescript": "^7.0.2"
   },
