@@ -1,22 +1,22 @@
 ---
 slug: release-2026-07
 title: |
-  Renku Release | July 2026 • Renku Jobs & Create custom environments from private repos
+  Renku Release | July 2026 • Renku Jobs, Coding Agents & Custom Environments from Private Repos
 authors: [elisabet, rokroskar, laura]
 tags:
   - RenkuLab Update
   - Sessions
   - Jobs
   - Pages
-  - Private Images
+  - Private Repositories
 image: ./cover-image-post-july-2026.png
 description: What's new on RenkuLab • July 2026
 ---
 
 This release extends Renku beyond interactive sessions. You can now submit a job
 that runs the same code, in the same environment, against the same data —
-without holding a browser tab open. Also in these releases: private images from
-code and dedicated pages for data connectors.
+without holding a browser tab open. Also in these releases: custom environments from private
+code repositories, coding agents in your sessions and dedicated pages for data connectors.
 
 ![cover](cover-image-post-july-2026.png)
 
@@ -30,7 +30,7 @@ Jobs, in release 2.19.0, removes that constraint.
 
 ---
 
-## 🚀 Run Non-Interactive Jobs, Right from the UI
+## 🚀 Run Non-Interactive Jobs
 
 A single Renku project can now carry work from first exploration through to long
 training runs. An ML engineer can run model-training jobs while a domain expert
@@ -63,7 +63,7 @@ within your resource pool's limits.
 For more details on the new Jobs feature, have a look at the
 [documentation](https://docs.renkulab.io/en/latest/docs/users/compute/job/).
 
-## 🔒 Building Private Images from Code
+## 🔒 Custom Environment from Private Code Repositories
 
 Starting from release 2.18.0 you can build images for sessions and jobs from
 private code repositories, not just public ones. You no longer need to create
@@ -79,6 +79,24 @@ repository will be able to launch a session or start a job from it.
 :::
 
 ![private code repository environments](private-code-environment.png)
+
+
+## 🤖 Using Coding Agents in Renku
+ 
+A Renku session is a clean, isolated environment - exactly where a coding agent
+works best, with your credentials and data kept contained. You can now bring an
+agent into your session by building the environment from code: add a
+`project.toml` file to the repository you build your image from, and Renku sets
+the agent up for you. We currently support **Claude, Codex, and Pi**.
+ 
+Renku also picks up your agent-specific configuration. If your repository
+includes a config folder for your agent (`.claude`, `.pi`, or `.codex`), Renku
+brings it into your session, so your custom skills and plugins come along
+automatically.
+ 
+Want to see it in action? Explore the [coding agents example
+project](https://renkulab.io/p/sdsc/coding-agents-example-full) for a working
+setup you can copy from.
 
 ## 🔗 Dedicated Pages for Data Connectors
 
