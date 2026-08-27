@@ -17,22 +17,23 @@
     "format:check": "prettier -c ."
   },
   "dependencies": {
-    "@docusaurus/core": "^3.10.1",
-    "@docusaurus/preset-classic": "^3.10.1",
+    "@docusaurus/core": "^3.10.2",
+    "@docusaurus/faster": "^3.10.2",
+    "@docusaurus/preset-classic": "^3.10.2",
     "@mdx-js/react": "^3.1.1",
     "clsx": "^2.1.1",
     "docusaurus-plugin-sass": "^0.2.6",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
-    "sass": "^1.101.0"
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "sass": "^1.103.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.10.1",
-    "@docusaurus/tsconfig": "^3.10.1",
-    "baseline-browser-mapping": "^2.10.37",
-    "prettier": "^3.8.4",
-    "typescript": "^6.0.3"
+    "@docusaurus/tsconfig": "^3.10.2",
+    "baseline-browser-mapping": "^2.11.18",
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2"
   },
   "browserslist": {
     "production": [
