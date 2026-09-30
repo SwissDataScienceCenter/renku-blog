@@ -37,14 +37,14 @@ setups tend to get in the way.
 
 ## Uniting data, code and compute with Renku
 
-The NCCR WP3 Flagship groups distributed across multiple institutions generate 
+The NCCR WP3 Flagship groups distributed across different institutions generate 
 strikingly different kinds of data:
 
-- **van der Meer**: flow cytometry data, 16S rRNA gene amplicon data, phage data
-- **Bernier-Latmani**: pore water chemistry, lysimeter sample metadata,
+- [**Environmental and Evolutionary Microbiology, van der Meer Lab - UNIL:**](https://www.unil.ch/fbm/en/home/menuinst/recherche/ssf/dmf/recherche/van-der-meer.html) flow cytometry data, 16S rRNA gene amplicon data, phage data
+- [**Environmental Microbiology Laboratory, Bernier-Latmani Lab - EPFL**:](https://www.epfl.ch/labs/eml/) pore water chemistry, lysimeter sample metadata,
   meta-genome and meta-transcriptome data
-- **Keiluweit**: soil structure microCT data, soil nutrient parameters
-- **Altshuler**: microcosm data, qPCR data, greenhouse-gas emission measurements
+- [**Molecular Biogeochemistry of Soils, Keiluweit Lab - UNIL:**](https://wp.unil.ch/bgc/) soil structure microCT data, soil nutrient parameters
+- [**Microbiome Adaptation to the Changing Environment, Altshuler Lab - EPFL:**](https://www.epfl.ch/labs/mace/research/) microcosm data, qPCR data, greenhouse-gas emission measurements
 
 Those data live where it makes sense for each group, in cloud storage and on
 lab systems, reached over **S3** and **sftp**, while the analysis code sits in a
@@ -52,11 +52,11 @@ shared **GitHub repository**. A Renku project connects data and code, and
 adds cloud compute, so a single project can spawn many browser-based sessions
 that combine different data sources with the right tools. Instead of each
 collaborator rebuilding a computational environment before they can even look at
-a result, they create a shared project, get access rights, and launch an interactive
-session directly in the browser.
+a result, they create a shared project, get access rights and launch interactive
+sessions directly in the browser.
 
 
-## Why this matters. For the NCCR and beyond
+## Reproducibility for the NCCR and beyond
 
 This is the everyday version of reproducibility that actually matters to a
 collaboration: not just "can the original author re-run it," but "can a colleague
