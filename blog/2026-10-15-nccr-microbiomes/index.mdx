@@ -31,10 +31,10 @@ setups tend to get in the way.
 
 The NCCR Flagship projects encourage collaboration among multiple groups, which distribute data generation and analysis across groups and institutions. This particular Flagship project includes:
 
-- The [**Environmental Microbiology Laboratory, Bernier-Latmani Lab - EPFL**:](https://www.epfl.ch/labs/eml/), which runs the long-term lysimeter study. Samples are collected at discrete time points; the collaborating groups perform different analyses on these samples. The EML performs metagenomic and metatransciptomic analyses, as well as recording the sample metadata.
-- The [**Environmental and Evolutionary Microbiology, van der Meer Lab - UNIL:**](https://www.unil.ch/fbm/en/home/menuinst/recherche/ssf/dmf/recherche/van-der-meer.html), which generates flow cytometry data, 16S rRNA gene amplicon data, and phage data from the EML's lysimeter samples.
-- The [**Molecular Biogeochemistry of Soils, Keiluweit Lab - UNIL:**](https://wp.unil.ch/bgc/), which generates soil structure microCT data, and measures soil nutrient parameters from the EML's lysimeter samples.
-- The [**Microbiome Adaptation to the Changing Environment, Altshuler Lab - EPFL:**](https://www.epfl.ch/labs/mace/research/), which runs a parallel soil microcosm study that informs the lysimeter sampling schedule. 
+- The [**Environmental Microbiology Laboratory, Bernier-Latmani Lab - EPFL**](https://www.epfl.ch/labs/eml/), which runs the long-term lysimeter study. Samples are collected at discrete time points; the collaborating groups perform different analyses on these samples. The EML performs metagenomic and metatransciptomic analyses, as well as recording the sample metadata.
+- The [**Environmental and Evolutionary Microbiology, van der Meer Lab - UNIL**](https://www.unil.ch/fbm/en/home/menuinst/recherche/ssf/dmf/recherche/van-der-meer.html), which generates flow cytometry data, 16S rRNA gene amplicon data, and phage data from the EML's lysimeter samples.
+- The [**Molecular Biogeochemistry of Soils, Keiluweit Lab - UNIL**](https://wp.unil.ch/bgc/), which generates soil structure microCT data, and measures soil nutrient parameters from the EML's lysimeter samples.
+- The [**Microbiome Adaptation to the Changing Environment, Altshuler Lab - EPFL**](https://www.epfl.ch/labs/mace/research/), which runs a parallel soil microcosm study that informs the lysimeter sampling schedule. 
 
 These various data sets live on the institutional servers, reached over **sftp**, or in **S3** cloud storage that syncs with the server. Collaborators are granted access permissions to the other groups' folders. The analysis code sits in a shared **GitHub repository**. A private Renku project connects data and code, and adds cloud compute, so a single project can spawn many browser-based sessions that combine different data sources with the right tools. Collaborators do not need to install software or rebuild a computational environment before looking at a result; rather, they create a shared project and launch interactive sessions directly in the browser.
 
@@ -44,7 +44,7 @@ These various data sets live on the institutional servers, reached over **sftp**
 
 This is the day-to-day practice of reproducibility that enables and reinforces a
 collaboration: not just "can the original author re-run it," but "can a colleague
-pick it up, verify it, and build on it." And moreover, not just a collaboration among colleagues that work down the hall from each other, but among researchers at different institutions or those who have moved on from the consortium. Keeping data, code and compute in one place turns pre-publication sharing from a special effort into the modus operandi. A single figure, re-opened and re-examined
+pick it up, verify it, and build on it." And moreover, not just a colleague who works down the hall, but one removed in space or time. Keeping data, code and compute in one place turns pre-publication sharing from a special effort into the modus operandi. A single figure, re-opened and re-examined
 long after its author left, is a small but honest proof that the model works.
 
 For collaborations whose value depends on data and code flowing freely between
